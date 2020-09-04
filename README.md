@@ -1,1 +1,1 @@
-![squirrel](https://giphy.com/gifs/ndeihy7lvAL9C)
+![squirrel](https://media.giphy.com/media/ndeihy7lvAL9C/giphy.gif)
