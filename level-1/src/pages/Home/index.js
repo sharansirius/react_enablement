@@ -1,21 +1,19 @@
 import React from 'react'; 
 import "./home.scss";
-import {Header, Footer} from "../../shared";
+import { Header, Footer } from "../../shared";
+import { destinationService } from "../../services/destinations";
 
 const Home = () => {
-    let propH = {
-        headerDisplayText : "This is header",
-        justAnotherPropH : "Prop 2"
-    }
-    let propF = {
-        footerDisplayText : "This is footer",
-        justAnotherPropF : "Prop 3"
-    }
+    destinationService.fetchAllDestinations()
+        .then((res)=>{
+            console.log("####", res);
+        });
+
     return (
         <>
-            <Header {...propH}/>
+            <Header />
             <h1>Hello World !!!!</h1>
-            <Footer {...propF} />
+            <Footer />
         </>
     );
 }
