@@ -1,18 +1,14 @@
-import React from 'react'; 
+import React from 'react';
 import "./home.scss";
 import { Header, Footer } from "../../shared";
-import { destinationService } from "../../services/destinations";
+import { Destinations } from "../../components";
 
 const Home = () => {
-    destinationService.fetchAllDestinations()
-        .then((res)=>{
-            console.log("####", res);
-        });
 
     return (
         <>
             <Header />
-            <h1>Hello World !!!!</h1>
+            <Destinations />
             <Footer />
         </>
     );

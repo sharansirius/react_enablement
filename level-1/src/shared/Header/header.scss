@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .wrapper {
     display: flex;
     justify-content: space-between;
@@ -21,7 +23,7 @@
 
             a {
                 text-decoration: none;
-                color: #7a1755;                
+                color: $text-color;                
             }
         }
     }
