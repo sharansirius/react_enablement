@@ -3,8 +3,8 @@ import "./footer.scss";
 
 const Footer = (props) => {
     return (
-        <div className="wrapper">   
-           <h1 className="heading">Sharan</h1>
+        <div className="component-wrapper">   
+           <p className="text-center">© Sirius computer solutions</p>
         </div>
     );
 }

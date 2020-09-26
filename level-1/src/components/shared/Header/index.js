@@ -1,13 +1,12 @@
 import React from 'react'; 
-import logo from '../../static/images/logo.png';
 import "./header.scss";
 
 const Header = () => {
 
     return (
-        <div className="wrapper">  
+        <div className="header component-wrapper">  
             <div className='imageWrapper'>
-                <img src={logo} alt="logo"/>
+                <img src={process.env.PUBLIC_URL+'/img/logo.png'} alt="logo"/>
             </div>    
             <ul>
                 <li><a href="#hotels">Hotels</a></li>

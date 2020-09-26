@@ -1,35 +1,46 @@
-import {React,useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import './destination.scss';
 import PropTypes from 'prop-types';
 import { destinationService } from "../../services/destinations";
 
 function Destinations() {
-  const {destinationList, setdestinationList} = useState([]);
-  destinationService.fetchAllDestinations().then((res) => {
-    console.log("inside", res)
-    setdestinationList(res);
-  });  
+  console.log("1. Hello I am getting rendered");
+  const [destinationList, setDestinationList] = useState(() => {
+    console.log('2. State set');
+    return null;
+  });
 
-  if(!destinationList) {
-    return <h5> No Destination available !!</h5>
-  } else {
-    console.log("destinationList",destinationList);
+  useEffect(() => {
+    console.log('3. Use effect');
+    destinationService.fetchAllDestinations().then((res) => {
+      setDestinationList(res);
+    });
+  },[]);
+
+  if (destinationList) {
+    console.log("5. Render ended");
     return (
-      <div className="destinationList">
-        <h1>Destinations</h1>
-        {
-          destinationList.map(item=> (
-            <div key={item.id}>
-              <img src={item.image ? '../../static/images' + item.image : ''} alt="place" />
-              <h4>{item.title}</h4>
-              <p>{item.location}</p>
-              <p>{item.description}</p>
-            </div>
-          ))
-        }
-      </div>
+      <>
+        <div className="component-wrapper">
+          <h1>Destinations</h1>
+          <div className="destinationList">
+            {
+              destinationList.map(item => (
+                <div key={item.id} className="item">
+                  <img src={process.env.PUBLIC_URL + '/img/' + item.image} alt="place" />
+                  <h4>{item.title}</h4>
+                  <p>{item.location}</p>
+                  <p>{item.description}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </>
     );
-  } 
+  }
+  console.log("5. Render ended - Empty");
+  return <h2 className="no-destinations"> No Destination available !!</h2>;
 }
 
 Destinations.prototypes = {

@@ -1,14 +1,15 @@
 import React from 'react';
 import "./home.scss";
-import { Header, Footer } from "../../shared";
-import { Destinations } from "../../components";
+import { Destinations, Promo, Header, Contact, Footer} from "../../components";
 
 const Home = () => {
 
     return (
         <>
             <Header />
+            <Promo />
             <Destinations />
+            <Contact />
             <Footer />
         </>
     );
