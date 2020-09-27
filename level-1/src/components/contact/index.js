@@ -1,5 +1,6 @@
 import React from 'react';
 import './contact.scss';
+import { Button } from "../../components";
 
 function Contact() {
 
@@ -40,8 +41,8 @@ function Contact() {
               <label htmlFor="contactNumber">Contact Name</label>
               <input type="tel" name="contactNumber" />
             </div>
+            <Button btn_label="Submit Interest"></Button>
           </form>
-
         </div>
       </div>
     </>

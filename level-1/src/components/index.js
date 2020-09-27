@@ -6,5 +6,6 @@ export { default as Contact } from "./contact";
 
 
 /** Shared components**/
-export { default as Header } from "./shared/Header";
-export { default as Footer } from "./shared/Footer";
+export { default as Header } from "./shared/header";
+export { default as Footer } from "./shared/footer";
+export { default as Button } from "./shared/button";

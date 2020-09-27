@@ -1,6 +1,7 @@
 import React from 'react';
 import './promo.scss';
 import image from './adventure.png';
+import { Button } from "../../components";
 
 function Promo() {
 
@@ -22,6 +23,7 @@ function Promo() {
               <option value="mercedes">Mercedes</option>
               <option value="audi">Audi</option>
             </select>
+            <Button btn_label="Explore"></Button>
           </form>
 
         </div>
