@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import './destination.scss';
+import Style from './destination.module.scss';
 import PropTypes from 'prop-types';
 import { destinationService } from "../../services/destinations";
+import { Button } from "..";
 
 function Destinations() {
   console.log("1. Hello I am getting rendered");
@@ -11,36 +12,37 @@ function Destinations() {
   });
 
   useEffect(() => {
+    /* Resolve at the level of page
+      1. Containers
+      2. Render Props */
     console.log('3. Use effect');
     destinationService.fetchAllDestinations().then((res) => {
       setDestinationList(res);
     });
-  },[]);
+  }, []);
 
-  if (destinationList) {
-    console.log("5. Render ended");
-    return (
+  return (destinationList) ? 
+    (
       <>
-        <div className="component-wrapper">
+        <div className={Style.contentWrapper}>
           <h1>Destinations</h1>
-          <div className="destinationList">
+          <p>Just for you, Because you and your bike are special to us.</p>
+          <div className={Style.destinationList}>
             {
               destinationList.map(item => (
-                <div key={item.id} className="item">
+                <div key={item.id} className={Style.item}>
                   <img src={process.env.PUBLIC_URL + '/img/' + item.image} alt="place" />
                   <h4>{item.title}</h4>
                   <p>{item.location}</p>
                   <p>{item.description}</p>
+                  <Button label="Read More"></Button>
                 </div>
               ))
             }
           </div>
         </div>
       </>
-    );
-  }
-  console.log("5. Render ended - Empty");
-  return <h2 className="no-destinations"> No Destination available !!</h2>;
+    ) : (<h2 className={Style.noDestinations}> No Destination available !!</h2>);
 }
 
 Destinations.prototypes = {

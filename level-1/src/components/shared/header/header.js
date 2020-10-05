@@ -1,11 +1,11 @@
 import React from 'react'; 
-import "./header.scss";
+import Styles from "./header.module.scss";
 
 const Header = () => {
 
     return (
-        <div className="header component-wrapper">  
-            <div className='imageWrapper'>
+        <div className={Styles.header}>  
+            <div className={Styles.imageWrapper}>
                 <img src={process.env.PUBLIC_URL+'/img/logo.png'} alt="logo"/>
             </div>    
             <ul>
