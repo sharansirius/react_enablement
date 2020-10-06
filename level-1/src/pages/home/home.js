@@ -1,16 +1,14 @@
 import React from 'react';
 import "./home.scss";
-import { Destinations, Promo, Header, Contact, Footer} from "../../components";
+import { Destinations, Promo, Contact} from "../../components";
 
 const Home = () => {
 
     return (
         <>
-            <Header />
             <Promo />
             <Destinations />
             <Contact />
-            <Footer />
         </>
     );
 }

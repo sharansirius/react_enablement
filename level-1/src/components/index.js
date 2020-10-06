@@ -1,6 +1,5 @@
 
 export { default as Destinations } from "./destinations/destination";
-export { default as App } from "./app";
 export { default as Promo } from "./promo/promo";
 export { default as Contact } from "./contact/contact";
 
