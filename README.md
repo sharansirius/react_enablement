@@ -1,3 +1,3 @@
 Level 1
 
-![squirrel](https://media.giphy.com/media/dsiIZgRZYLBCXaFeoB/giphy.gif)
+![Rugby](https://media.giphy.com/media/dsiIZgRZYLBCXaFeoB/giphy.gif)
