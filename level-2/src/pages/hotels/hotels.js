@@ -1,5 +1,5 @@
 import React from 'react';
-import "./hotels.scss";
+import "./hotels.module.scss";
 
 const Hotels = () => {
 

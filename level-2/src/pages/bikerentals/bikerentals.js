@@ -1,5 +1,5 @@
 import React from 'react';
-import "./bikerentals.scss";
+import "./bikerentals.module.scss";
 
 const BikeRentals = () => {
 

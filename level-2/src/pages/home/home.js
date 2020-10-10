@@ -1,13 +1,13 @@
 import React from 'react';
-import "./home.scss";
-import { Destinations, Promo, Contact} from "../../components";
+import "./home.module.scss";
+import { List, Promo, Contact} from "../../components";
 
 const Home = () => {
 
     return (
         <>
             <Promo />
-            <Destinations />
+            <List />
             <Contact />
         </>
     );

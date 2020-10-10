@@ -1,7 +1,7 @@
 import React from 'react';
 import './app.scss';
 import { Header, Footer} from "./components";
-import { Home, Hotels, BikeRentals, Restaurants } from "./pages";
+import { Home, Hotels, BikeRentals, Restaurants, LocationInsight } from "./pages";
 import {Route, BrowserRouter as Router} from "react-router-dom";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
         <Route path="/hotels" component={Hotels} />
         <Route path="/bikerentals" component={BikeRentals} />
         <Route path="/restaurants" component={Restaurants} />
+        <Route path="/details" component={LocationInsight} />
         <Footer />
       </Router>  
     </>
