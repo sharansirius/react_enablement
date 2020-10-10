@@ -1,0 +1,53 @@
+.promo {
+    display: flex;
+    flex-flow: row;
+    margin: 1rem auto;
+    max-width: 80%;
+
+    .formWrapper {
+        width: 40%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: flex-end;
+        padding-right: 2rem;
+        
+        h4 {
+            font-size: 2.4rem;
+            margin: 0;
+            font-weight: 400;   
+            width: 318px;        
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin: 1rem 0 0 0;
+        }
+        form, h1 {
+            width: 318px;
+        }
+
+        .carsLabel {
+            font-size: 1.2rem;
+            margin-right: .5rem;
+        }
+
+        .carsList {
+            padding: 0.5rem;    
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .promoImage {
+        width: 60%;
+        padding-right: 2rem;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
