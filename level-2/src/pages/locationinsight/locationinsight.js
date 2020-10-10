@@ -26,6 +26,7 @@ const LocationInsight = (props) => {
                 setSimilarPlaces(res);
             }
         }); 
+        // Test Commit
         _service.getWeather(parms.id).then((res) => {
             if(res && res.length>0){
                 if(res && res.main && res.main.temp){
