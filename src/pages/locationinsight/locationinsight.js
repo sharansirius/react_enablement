@@ -14,7 +14,6 @@ const LocationInsight = (props) => {
         return null;
     });
     
-    console.log(similarPlaces);
     useEffect(() => {
         _service.getDetails(parms.id).then((res) => {
             if(res && res.length>0){
@@ -26,15 +25,16 @@ const LocationInsight = (props) => {
                 setSimilarPlaces(res);
             }
         }); 
+        setTemp("32°C");
         // Test Commit
-        _service.getWeather(parms.id).then((res) => {
-            if(res && res.length>0){
-                if(res && res.main && res.main.temp){
-                    let temprature =  (res.main.temp - 273.15);
-                    setTemp(temprature);
-                }
-            }
-        });      
+        // _service.getWeather(parms.id).then((res) => {
+        //     if(res && res.length>0){
+        //         if(res && res.main && res.main.temp){
+        //             let temprature =  (res.main.temp - 273.15);
+        //             setTemp(temprature);
+        //         }
+        //     }
+        // });      
     }, [parms])
 
     return (details) ? (
@@ -49,8 +49,7 @@ const LocationInsight = (props) => {
             </div>
             <p>{details.description}</p>
             <p>{details.description}</p>
-            <p>{details.description}</p>
-            <p>{details.description}</p>  
+            <p>{details.description}</p> 
         </div>
     ): <h1 className="text-center">No Data</h1>;
 }

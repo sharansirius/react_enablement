@@ -1,42 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Style from './list.module.scss';
-import { destinationService as _service } from "../../../services/_destinations";
 import { Destination } from "../..";
+import { CONSTANTS } from "../../../constants/constants";
+import PropTypes from 'prop-types';
 
-function List() {
-  console.log("1. Hello I am getting rendered");
-  const [destinationList, setDestinationList] = useState(() => {
-    console.log('2. State set');
-    return null;
-  });
-
-  useEffect(() => {
-    /* Resolve at the level of page
-      1. Containers
-      2. Render Props */
-    console.log('3. Use effect');
-    _service.fetchAllDestinations().then((res) => {
-      setDestinationList(res);
-    });
-  }, []);
-
-  return (destinationList) ? 
+function List(props) {
+  console.log(props);
+  return (props.items && props.items.length > 0) ? 
     (
       <>
         <div className={Style.contentWrapper}>
-          <h1>Destinations</h1>
-          <p>Just for you, Because you and your bike are special to us.</p>
-          <div className={Style.destinationList}>
+          <h1>{props.heading}</h1>
+          <p>{props.subHeading}</p>
+          <div className={Style.items}>
             {
-              destinationList.map(item => (
-                <Destination
-                  key={item.id}
-                  id={item.id}
-                  image={item.image}
-                  title={item.title}
-                  location={item.location}
-                  description={item.description}></Destination>
-              ))
+              (props.type === CONSTANTS.LIST_TYPE_DESTINATION) ?
+                props.items.map(item => ( //List of destination
+                  <Destination
+                    key={item.id}
+                    id={item.id}
+                    image={item.image}
+                    title={item.title}
+                    location={item.location}
+                    description={item.description}></Destination>        
+                )) : (props.type === CONSTANTS.LIST_TYPE_SIMILAR_ITEMS) ? '': ''
             }
           </div>
         </div>
@@ -44,4 +31,10 @@ function List() {
     ) : <h2 className={Style.noDestinations}> No Destination available !!</h2>;
 }
 
+List.prototypes = {
+  items: PropTypes.array,
+  type: PropTypes.string,
+  heading: PropTypes.string,
+  subHeading: PropTypes.string
+}
 export default List;
