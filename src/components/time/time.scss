@@ -1,0 +1,22 @@
+@import '../../variables.scss';
+
+.time {
+    background: $timer-bg;
+    padding: 8px 12px;
+    min-height: $header-height;
+    min-width: 100px;
+
+    p {
+        margin: 0;
+        font-size: .74rem;
+    }
+
+    h1 {
+        margin: 0;
+        margin-top: 10px;
+        padding: 0;
+        font-size: .95rem;
+        text-align: center;
+        font-weight: 500;        
+    }
+}

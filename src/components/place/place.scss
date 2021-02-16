@@ -1,0 +1,23 @@
+.place {
+  width: 160px;
+  text-align: center;
+  overflow: hidden;
+  margin-right: 8px;
+  margin-bottom: 8px;
+
+  h5 {
+    margin: 8px 0;
+  }
+  p {
+    margin: 8px 0;
+    font-size: .8rem;
+  }
+
+  img {
+    height: 160px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    background-color: lightgrey;    
+  }
+}

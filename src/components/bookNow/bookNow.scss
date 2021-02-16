@@ -1,0 +1,26 @@
+.booknow_wrapper {
+  background-color: #88befe;
+
+  .row_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card_heading {
+    margin: 0;
+  }
+
+  .prime_logo{
+    width: 40px;
+    height: auto;
+  }
+  p {
+    margin: 8px 0;
+  }
+
+  input {
+    width: auto;
+  }
+}

@@ -1,0 +1,1 @@
+export { GlobalPromotions } from "./globalPromotion/globalPromotion";

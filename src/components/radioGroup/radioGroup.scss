@@ -1,0 +1,13 @@
+@import "../../variables.scss";
+
+.radio_group {
+    display: flex;
+    flex-direction: row;
+
+    .radio_item {
+        background-color: $primary;
+        padding: 0.2rem 0.4rem;
+        margin-right: 2px;
+        color: white;
+    }
+}

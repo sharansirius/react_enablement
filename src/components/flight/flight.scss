@@ -1,0 +1,15 @@
+.flight_wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    padding: 0.5rem;
+    margin-bottom: 8px;
+    align-items: center;
+    
+    p {
+        font-size: .7rem;
+        margin: 0;
+        margin-bottom: 4px;
+    }
+}
