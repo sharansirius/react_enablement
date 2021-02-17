@@ -1,6 +1,6 @@
 Level 2
 
-![Great Job](https://gph.is/st/M2QgwNE)
+![Great Job](https://i.giphy.com/media/L18eWc1aONJ45m6aEJ/giphy.webp)
 
 # Getting Started with Create React App
 
