@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import logger from "../../utils/logger";
 import "./home.scss";
@@ -6,7 +6,7 @@ import { AvailableFlights, BookNow, Header, Promotions, Search, PlanTrip } from 
 import { GlobalPromotions } from "../../containers";
 import UserContext from "../../context/userContext";
 
-export const Home = React.memo( ({ location }) => {
+export const Home = React.memo(({ location }) => {
   logger.config.enableLogger();
   console.log("On Home Init");
   const [source, setSource] = useState();
@@ -15,24 +15,23 @@ export const Home = React.memo( ({ location }) => {
   const [selectedFlight, setSelectedFlight] = useState({});
   const [showFlights, setShowFlights] = useState(false);
 
-  const planTrip = () => setShowFlights(true);
+  const planTrip = useCallback(() => {setShowFlights(true)},[showFlights])
 
-  const onSourceChange = (event) => {
+  const onSourceChange = useCallback((event) => {
     setSource(event.target.value);
     setShowFlights(false);
     setSelectedFlight({})
-  }
+  },[source])
 
-  const onDestinationChange = (event) => {
+  const onDestinationChange = useCallback((event) => {
     setCity(event.target.value);
     setDestination(event.target.value);
     setShowFlights(false);
     setSelectedFlight({})
-  }  
+  },[destination])  
 
   const searchForPlace = (event) => {
-    event.preventDefault();
-    setCity(event.target.elements[0].value);
+    if((event.which || event.keyCode) === 13) setCity(event.target.value);
   }
 
   const onBook = (fightDetails) => {
@@ -44,7 +43,7 @@ export const Home = React.memo( ({ location }) => {
       <Header></Header>
       <div className="content_wrapper">
         <div className="left">
-          <Search  onSubmit={searchForPlace}></Search>
+          <Search  onkeypress={searchForPlace}></Search>
           <Promotions city={city}></Promotions>
           <GlobalPromotions></GlobalPromotions>
         </div>

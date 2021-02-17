@@ -15,7 +15,6 @@ export const RadioGroup = React.memo(({ buttons, name, onItemSelected }) => {
             name={name}
             value={item.value}
             onChange={onItemSelected}
-            checked={index===0?true:false}
           />
           <label htmlFor={name}>{item.label}</label>
         </div>

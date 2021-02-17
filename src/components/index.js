@@ -1,6 +1,6 @@
 export { default as Button } from "./button/button";
-export { default as Input } from "./input/input";
-export { default as LoginForm } from "./loginForm/loginForm";
+export { Input } from "./input/input";
+export { LoginForm } from "./loginForm/loginForm";
 export { AvailableFlights } from "./availableFlights/availableFlights";
 export { BookNow } from "./bookNow/bookNow";
 export { Header } from "./header/header";

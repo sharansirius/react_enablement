@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./input.scss";
 
-function Input({
+export const Input = React.memo(({
   type,
   placeholder,
   value,
@@ -10,8 +10,9 @@ function Input({
   onChange,
   specialClass = "",
   name,
-  checked
-}) {
+  checked,
+  onkeypress
+}) => {
   console.log("On Input Init");
   return (
     <input
@@ -23,9 +24,10 @@ function Input({
       className={specialClass ? specialClass + " input" : "input"}
       onChange={onChange}
       checked={checked}
+      onKeyPress={onkeypress}
     />
   );
-}
+})
 
 Input.propTypes = {
   placeholder: PropTypes.string,
@@ -35,7 +37,6 @@ Input.propTypes = {
   onChange: PropTypes.func,
   specialClass: PropTypes.string,
   name: PropTypes.string,
-  checked: PropTypes.bool
+  checked: PropTypes.bool,
+  onkeypress: PropTypes.func
 };
-
-export default Input;
