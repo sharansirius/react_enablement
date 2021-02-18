@@ -39,3 +39,4 @@ export const Promotions = React.memo(({ city }) => {
 Promotions.propTypes = {
   city: PropTypes.string,
 };
+

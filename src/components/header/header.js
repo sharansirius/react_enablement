@@ -10,10 +10,12 @@ export const Header = React.memo(() => {
     <div className="header">
       <ul>
         <li className="logo">
-          <img src={process.env.PUBLIC_URL + "/img/logo.png"} alt="logo" />
+          <img src={process.env.PUBLIC_URL + "/img/logo.png"} alt="logo" /> 
+          {/* move the image into Logo */}
         </li>
         <li className={user_info?.prime === "false" ? "hide" : "prime"}>
           <img src={process.env.PUBLIC_URL + "/img/prime.png"} alt="prime" />
+           {/* Move the prime logo as a seperate component */}
         </li>
       </ul>
       <ul className="timer">

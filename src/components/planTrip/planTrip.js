@@ -13,11 +13,11 @@ export const PlanTrip = React.memo(({onSubmit, onSourceChange, onDestinationChan
                     options={ [{id:"1", value:"MAA", label:"Chennai"},{id:"2", value:"BLR", label:"Banglore"}]}
                     selector="source"
                     onChange={onSourceChange}
-                    label='Source'></Select>
+                    label='Source'/>
                 <Select options={ [{id:"1", value:"MUM", label:"Mumbai"},{id:"2", value:"PAR", label:"Paris"}]}
                     selector="destination"
                     onChange={onDestinationChange}
-                    label='Destination'></Select>
+                    label='Destination'/>
                 <Button selector="full" type="button" onClick={onSubmit}>SEARCH</Button>
             </Form>
         </div>
@@ -29,13 +29,3 @@ PlanTrip.propTypes = {
     onSourceChange: PropTypes.func, 
     onDestinationChange: PropTypes.func
 };
-
-// console.log("Init PlanTrip");
-// const [source, setSource] = useState('');
-// const [destination, setDestination] = useState('');
-// const onFormSubmit = (event) => {
-//     event.preventDefault();
-//     console.log(source, destination);
-// }
-// onChange={(event)=>{setDestination(event.target.value)}}
-// onChange={(event)=>{setSource(event.target.value)}}

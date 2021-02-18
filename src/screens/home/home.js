@@ -31,7 +31,7 @@ export const Home = React.memo(({ location }) => {
   },[destination])  
 
   const searchForPlace = (event) => {
-    if((event.which || event.keyCode) === 13) setCity(event.target.value);
+    if((event.which || event.keyCode) === 13) setCity(event.target.value); //Logic should go into search
   }
 
   const onBook = (fightDetails) => {

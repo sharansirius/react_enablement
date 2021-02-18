@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import { Time } from "../../components";
 import "./timer.scss"
 
+// Rename the component
+// Create timer and clocks components
+
 const Timer = ({ init }) => {
   console.log("On Timer Init");
   const [time, setTime] = useState(init);

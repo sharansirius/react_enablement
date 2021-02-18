@@ -14,7 +14,7 @@ export const Search = React.memo( ({onkeypress}) => {
         <Input type="search"
           placeholder="Type your favourite destination here !"
           autofocus={true}
-          specialClass="long"
+          specialClass="long" 
           onkeypress={onkeypress}/>
       </div>
     </div>
@@ -24,3 +24,6 @@ export const Search = React.memo( ({onkeypress}) => {
 Search.propTypes = {
   onkeypress : PropTypes.func
 };
+
+// modify search class 
+// - for class names
