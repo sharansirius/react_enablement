@@ -1,24 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+// The function that toggles between themes
 function App() {
+
+  
+  // Return the layout based on the current theme
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <h1> Hasdfk asd fkasdf asdkma dfasdkf</h1>
   );
 }
 
