@@ -27,7 +27,7 @@ That should solve your issue, while I was setting up this project that was commo
 
 ###  ----- Setup eslint ----- 
 
-I prefer installing eslint this way, this approach will take care of creating the eslint config file, downloading all the eslint dependencies. If you prefer not to install eslint globally, feel free to figure out other solutions online.
+I recommend and prefer installing eslint this way, this approach will take care of creating the eslint config file, downloading all the eslint dependencies. If you prefer not to install eslint globally, feel free to figure out other solutions online.
 
 ##### `npm install -g eslint`
 ##### `eslint --init`
