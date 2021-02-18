@@ -1,6 +1,6 @@
 # Project Setup as on FEB 2021
 
-### Create React Application
+### ----- Create React Application ----- 
 
 ##### `npx create-react-app my-app --template typescript`
 
@@ -8,7 +8,7 @@
 
 ##### `yarn create react-app my-app --template typescript`
 
-### Add SCSS to your applicaiton
+### ----- Add SCSS to your applicaiton ----- 
 
 ##### `npm i --save-dev node-sass`
 
@@ -25,7 +25,7 @@ if there is some error like " Couldn't find a declaration file for module 'react
 That should solve your issue, while I was setting up this project that was common setup issue.
 
 
-### Setup eslint
+###  ----- Setup eslint ----- 
 
 I prefer installing eslint this way, this approach will take care of creating the eslint config file, downloading all the eslint dependencies. If you prefer not to install eslint globally, feel free to figure out other solutions online.
 
@@ -74,7 +74,7 @@ Try running application once again to make sure it is all running without any er
 
 ##### `npm start`
 
-### Set up Pre-Commit Hook
+### ----- Set up Pre-Commit Hook ----- 
 husky is a tool that allows to set up Git Hooks easily. We could set up a pre-commit hook with husky that will make sure the ESLint and Prettier scripts are run before the code is committed to your repository.
 
 ##### `npm install --save-dev husky`
