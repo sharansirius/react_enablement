@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import { Timer } from "../../components";
+import { TimeKeeper } from "../../components";
 import UserContext from "../../context/userContext";
 import "./header.scss";
 export const Header = React.memo(() => {
@@ -18,9 +18,9 @@ export const Header = React.memo(() => {
            {/* Move the prime logo as a seperate component */}
         </li>
       </ul>
-      <ul className="timer">
+      <ul className="timeKeeper">
         <li>
-          <Timer init={new Date()} />
+          <TimeKeeper init={new Date()} />
         </li>
         <li>Hi, {user_info?.name}</li>
       </ul>

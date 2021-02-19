@@ -39,7 +39,8 @@ export const Home = React.memo(({ location }) => {
   }
 
   return (
-    <UserContext.Provider value={location.data}>
+    <UserContext.Provider value={{"name":"Nijin Vinodan","prime":"true"}}>
+      {/* location.data */}
       <Header></Header>
       <div className="content_wrapper">
         <div className="left">

@@ -1,42 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
+import "./timer.scss";
 import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
-import { Time } from "../../components";
-import "./timer.scss"
 
-// Rename the component
-// Create timer and clocks components
-
-const Timer = ({ init }) => {
-  console.log("On Timer Init");
-  const [time, setTime] = useState(init);
-
+const Timer = React.memo(({ interval, onTimeChange }) => {
+  console.log("On timer init");
   useEffect(() => {
     let myInterval = setInterval(() => {
-      setTime(new Date());
-    }, 60000);
+      let newDate = new Date();
+      onTimeChange(newDate);
+    }, interval);
     return () => {
       clearInterval(myInterval);
     };
   }, []);
-
-  return (
-    <ul>
-      <li>
-        <Time init={init} session={true} current={time} />
-      </li>
-      <li>
-        <Time current={time} type="EST" />
-      </li>
-      <li>
-        <Time current={time} type="IST" />
-      </li>
-    </ul>
-  );
-};
+  return <></>;
+})
 
 Timer.propTypes = {
-    init: PropTypes.object
+    interval: PropTypes.number, 
+    onTimeChange: PropTypes.func
 };
 
 export default Timer;
