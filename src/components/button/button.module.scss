@@ -1,0 +1,33 @@
+.button {
+    padding: 0.5rem 1rem;
+    border: 0;
+    height: 35px;
+    border-radius: 20px;
+    margin-right: 8px;
+    background-color: transparent;
+    color: var(--theme-text-color);
+    text-transform: capitalize;
+    text-align: left;
+    cursor: pointer;
+    font-weight: 600;
+    
+    &.primary,&.secondary {
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &.primary {
+        background-color: var(--theme-primary-action);    
+        color: var(--theme-white);
+    }
+
+    &.secondary {
+        background-color: var(--theme-secondary-action);    
+        color: var(--theme-black);
+    }
+
+    &.full {
+        width: 100%;
+    }
+
+}

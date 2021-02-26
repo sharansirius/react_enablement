@@ -1,0 +1,13 @@
+.heading {
+   margin: 2rem auto;
+   .part1 {
+    color: var(--theme-logo-part1);
+    font-weight: 500;
+   }
+
+   .part2 {
+        color: var(--theme-logo-part2);
+        font-weight: 600;
+        margin-left: .2rem;
+   }
+}

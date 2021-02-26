@@ -1,0 +1,14 @@
+.search {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   margin-top: 20px;
+
+   Input {
+      width: calc(100% - 116px);
+   }
+   Button {
+      width: 100px;
+   }
+}

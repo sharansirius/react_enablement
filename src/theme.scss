@@ -1,0 +1,27 @@
+.dark {
+  --theme-primary: #031d2e;
+  --theme-secondary: #002b48;
+  --theme-ternary: #021929;
+  --theme-bg: #000000;
+  --theme-logo-part1: #ffffff;
+  --theme-logo-part2: #ffffff;
+  --theme-text-color: #ffffff;
+  --theme-primary-action: #b354b7;
+  --theme-secondary-action: #69f8f8;
+  --theme-white: #ffffff;
+  --theme-black:#000000;
+}
+
+.light {
+    --theme-primary: #ffffff;
+    --theme-secondary: #ffffff;
+    --theme-ternary: #95e1f4;
+    --theme-bg: #f5f6fa;
+    --theme-logo-part1: #b354b7;
+    --theme-logo-part2: #000000; 
+    --theme-text-color: #000000;
+    --theme-primary-action: #b354b7;
+    --theme-secondary-action: #69f8f8;
+    --theme-white: #ffffff;
+    --theme-black:#000000;
+}
