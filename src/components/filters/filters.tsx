@@ -1,16 +1,22 @@
 import React from "react";
 import styles from "./filters.module.scss";
-import { CheckboxGroup } from "../";
+import { Filter } from "../";
 import { useSelector } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
 
 function Filters() {
   console.log("Filters Init");
   const filters = useSelector((state: BlogAppStore) => state.filters);
-  const updateFilter = (e:any) => {console.log(e)}
   return (
     <div className={styles.filters}>
       <h3>Filters</h3>
-      <CheckboxGroup list={filters} onChange={updateFilter}/>      
+      {
+        (filters&& filters.length > 0) ? 
+            filters.map((item: Filter,index:number) => (
+              <Filter key={uuidv4()} item={item} index={index}/>   
+            )) 
+            : ''
+      }   
     </div>
   );
 }

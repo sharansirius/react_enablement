@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./buttonGroup.module.scss";
 import { setTheme } from "../../actions";
 import { Dispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
-import { Button } from "../../components";
+import { Button, Members } from "../../components";
 
 function ButtonGroup() {
   console.log("ButtonGroup init");
-
+  const[showMembers, setShowMembers] = useState(false);
   const dispatch: Dispatch = useDispatch();
   const theme = useSelector((state: BlogAppStore) => state.theme);
   const toogleTo:string = ( theme === "dark") ? "light" : "dark";
@@ -17,8 +17,9 @@ function ButtonGroup() {
 
   return (
     <div className={styles.buttonGroup}>
-      <Button onClick={()=> alert("")}> View Members </Button>
-      <Button onClick={toggleTheme}> Switch to {toogleTo} theme</Button>
+      <Button classSelector="full" onClick={()=> setShowMembers(true)}> View Members </Button>
+      <Button classSelector="full" onClick={toggleTheme}> Switch to {toogleTo} theme</Button>
+      {showMembers && <Members clickToHide={()=>setShowMembers(false)}/>}
     </div>
   );
 }

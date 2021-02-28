@@ -5,7 +5,9 @@ type ThemeAction = {
 
 type FilterAction = {
   type: string;
-  filters: Array<string>;
+  filters: Array<Filter>;
+  filter?: Filter;
+  index?: number;
 };
 
 type Filter = {

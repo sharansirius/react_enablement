@@ -1,25 +1,24 @@
-import styles from "./search.module.scss";
-import React, { ChangeEvent } from 'react';
-import {Input, Button} from '../'
+import React, { ChangeEvent } from "react";
+import { Input } from "../";
 
-function Search({searchText,onChange}:SearchProp) {
+function Search({ searchText, onChange }: SearchProp) {
   console.log("Search init");
   return (
-    <div className={styles.search}>
-        <Input  type="search" 
-                value={searchText} 
-                name="search"
-                placeholder="Search Blogs"
-                autofocus={true}
-                onChange={onChange}/>
-        <Button onClick={()=>console.log("Hi Im clicked")} classSelector="primary">New</Button>      
-    </div>
+    <Input
+      type="search"
+      value={searchText}
+      name="search"
+      placeholder="Search Blogs"
+      autofocus={true}
+      onChange={onChange}
+      classSelector="long"
+    />
   );
 }
 
 interface SearchProp {
-  searchText: string,
-  onChange?:(event: ChangeEvent<HTMLInputElement>) => void
+  searchText: string;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default Search;
