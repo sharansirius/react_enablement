@@ -1,9 +1,10 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, ChangeEvent} from "react";
 import styles from "./blogDetails.module.scss";
-import { Card, JumboImage, Button, TextArea } from "../../components";
+import { JumboImage, Button, TextArea } from "../../components";
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveBlog, updateBlogs } from "../../actions"
 import { Dispatch } from "redux";
+import  * as utils  from "../../utils/localstorage";
 
 function BlogDetails() {
   console.log("Blog Details init");
@@ -11,14 +12,26 @@ function BlogDetails() {
   const {blog, index} = useSelector((state: BlogAppStore) => state.selectedBlog);
   const dispatch: Dispatch = useDispatch();
   const [descreption, setDescription] =  useState(blog?.details);
+  utils.setData("isEdited", editClicked);
 
   const saveContent = () => {
-    setEditClicked(!editClicked);
+    onEditToggle();
     const modifiedBlog = {...blog, ...{details:descreption}};
     dispatch(setActiveBlog(modifiedBlog,index));
     dispatch(updateBlogs(modifiedBlog,index));
+    utils.setData("isEdited", editClicked);
   };
-  
+
+  const onDestinationChange = (event:ChangeEvent<HTMLTextAreaElement>) => {
+    utils.setData("isEdited", true);
+    setDescription(event.target.value)
+  }  
+
+  const onEditToggle = () => {
+    setEditClicked(!editClicked);
+    utils.setData("isEdited", editClicked);    
+  }
+
   useEffect(()=>{
     setDescription(blog?.details)
   },[blog])
@@ -30,12 +43,12 @@ function BlogDetails() {
         {(!editClicked) ? (
           <>
             <p>{blog?.details}</p>
-            <Button onClick={()=>setEditClicked(!editClicked)} classSelector="secondary">  Edit Content </Button>
+            <Button onClick={onEditToggle} classSelector="secondary">  Edit Content </Button>
           </>
         ) : (
           <>
-            <TextArea value={descreption} name="description" onChange={(event)=>{setDescription(event.target.value)}} />    
-            <Button onClick={()=>setEditClicked(!editClicked)} classSelector="secondary"> Cancel </Button>
+            <TextArea value={descreption} name="description" onChange={onDestinationChange} />    
+            <Button onClick={onEditToggle} classSelector="secondary"> Cancel </Button>
             <Button onClick={saveContent} classSelector="primary">Save Content</Button>
           </>
         )}

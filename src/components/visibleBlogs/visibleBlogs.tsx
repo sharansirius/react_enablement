@@ -83,7 +83,6 @@ function VisibleBlogs({ skey }: VisibleBlogsProp) {
 
   /** Checks when filters are modified */
   useEffect(() => {
-    console.log("--------- calling reset filters ----------");
     resetBlogsBasedOnFilter();
   }, [filters]);
 
