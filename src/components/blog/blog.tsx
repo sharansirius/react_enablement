@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
 import { setActiveBlog } from "../../actions";
 import styles from "./blog.module.scss";
+import { Heading } from '..'
 import  * as utils  from "../../utils/localstorage";
 
 function Blog({ blog, index }: BlogProps) {
@@ -24,7 +25,7 @@ function Blog({ blog, index }: BlogProps) {
 
   return (
     <div className={styles.blog} onClick={onItemClick}>
-      <h4>{blog?.title}</h4>
+      <Heading label={blog?.title} classSelector="small"/>
       <p className={styles.type}>{blog?.type}</p>
       <p className={styles.details}>{blog?.details}</p>
     </div>

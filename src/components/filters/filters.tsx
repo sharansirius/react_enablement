@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./filters.module.scss";
-import { Filter } from "../";
+import { Filter, Heading } from "../";
 import { useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 
@@ -9,7 +9,7 @@ function Filters() {
   const filters = useSelector((state: BlogAppStore) => state.filters);
   return (
     <div className={styles.filters}>
-      <h3>Filters</h3>
+      <Heading label="Filters" classSelector="small" />
       {
         (filters&& filters.length > 0) ? 
             filters.map((item: Filter,index:number) => (
@@ -20,10 +20,5 @@ function Filters() {
     </div>
   );
 }
-
-// interface FiltersProps {
-//   children: ReactChild | ReactChildren,
-//   width: string
-// }
 
 export default Filters;

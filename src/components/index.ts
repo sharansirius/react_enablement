@@ -17,3 +17,5 @@ export { default as SearchAndCreateNew} from "./searchAndCreateNew/searchAndCrea
 export { default as Modal} from "./modal/modal";
 export { default as Member} from "./member/member";
 export { default as Members} from "./members/members";
+export { default as ErrorBoundary} from "./errorBoundary/errorBoundary";
+export { default as Heading} from "./heading/heading";

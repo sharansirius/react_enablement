@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ChangeEvent} from "react";
 import styles from "./blogDetails.module.scss";
-import { JumboImage, Button, TextArea } from "../../components";
+import { JumboImage, Button, TextArea, Heading } from "../../components";
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveBlog, updateBlogs } from "../../actions"
 import { Dispatch } from "redux";
@@ -39,7 +39,7 @@ function BlogDetails() {
   return (
       <div className={styles.blogDetails}>
         <JumboImage src={blog?.photo} />
-        <h2>{blog?.title}</h2>
+        <Heading classSelector="large" label={blog?.title} />
         {(!editClicked) ? (
           <>
             <p>{blog?.details}</p>

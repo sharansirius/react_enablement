@@ -12,7 +12,7 @@ function List({data}: ListProps) {
           data.map((item:Blog,index:number) => (
             <Blog key={uuidv4()} blog={item} index={index}/>
           )) 
-        : <p>Loading...</p>
+        : ''
       }
     </>
   );

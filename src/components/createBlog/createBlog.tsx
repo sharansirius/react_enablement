@@ -1,6 +1,6 @@
 import React, { MouseEvent, useState } from "react";
 import styles from "./createBlog.module.scss";
-import { Modal, Input, TextArea, Button } from "../";
+import { Modal, Input, TextArea, Button, Heading } from "../";
 import { Dispatch } from "redux";
 import { useDispatch } from "react-redux";
 import { addBlog } from "../../actions";
@@ -18,10 +18,10 @@ function CreateBlog({clickToHide}:CreateBlogProps) {
   return (
     <Modal closeModal={clickToHide}>
       <div className={styles.createBlog}>
-        <h2>Add new Blog</h2>
-          <Input classSelector="long" value={title} name="title" type="text" onChange={(e)=> setTitle(e.target.value)}/>
-          <TextArea value={details} name="title" onChange={(e)=> setDetails(e.target.value)}/>
-          <Button classSelector="primary" onClick={saveBlog}>Add</Button>
+        <Heading  classSelector="large" label="Add new Blog" />
+        <Input classSelector="long" value={title} name="title" type="text" onChange={(e)=> setTitle(e.target.value)}/>
+        <TextArea value={details} name="title" onChange={(e)=> setDetails(e.target.value)}/>
+        <Button classSelector="primary" onClick={saveBlog}>Add</Button>
       </div>
     </Modal>
   );
