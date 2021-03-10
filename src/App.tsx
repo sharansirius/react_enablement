@@ -1,18 +1,19 @@
-import React from 'react';
-import './app.scss';
-import './theme.scss';
-import { useSelector } from 'react-redux';
-import { Details, LeftNav, Blogs} from "./containers";
+import React from "react";
+import "./app.scss";
+import "./theme.scss";
+import { Provider } from "react-redux";
+import { ErrorBoundary } from "./components/";
+import store from "./redux/store";
+import { Main } from "./containers";
 
 function App() {
   console.log("--- Container --- App init");
-  const theme = useSelector((state:BlogAppStore) => state.theme)
   return (
-    <div className={`app ${theme}`}>
-      <LeftNav />    
-      <Blogs />
-      <Details />  
-    </div>
+    <ErrorBoundary>
+      <Provider store={store}>
+        <Main />
+      </Provider>
+    </ErrorBoundary>
   );
 }
 
