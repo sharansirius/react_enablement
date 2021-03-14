@@ -3,14 +3,19 @@ import React from "react";
 import { Input } from "..";
 import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
-import { updateFilter } from "../../actions"
+import { updateFilter } from "../../redux";
 
 function Filter({ item, index }: FilterProps) {
   console.log("Filter Init");
   const dispatch: Dispatch = useDispatch();
   const onChangeHandler = () => {
-    dispatch(updateFilter({...item, ...{checked:!item.checked}},index));
-  }
+    dispatch(
+      updateFilter({
+        filter: { ...item, ...{ checked: !item.checked } },
+        index: index,
+      })
+    );
+  };
   return (
     <div className={styles.filter}>
       <Input
@@ -19,7 +24,8 @@ function Filter({ item, index }: FilterProps) {
         name={item.name}
         label={item.name}
         checked={item.checked}
-        onChange={onChangeHandler}/>            
+        onChange={onChangeHandler}
+      />
     </div>
   );
 }

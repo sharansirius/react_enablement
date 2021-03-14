@@ -2,14 +2,14 @@ import React, { useState, useEffect, ChangeEvent} from "react";
 import styles from "./blogDetails.module.scss";
 import { JumboImage, Button, TextArea, Heading } from "../../components";
 import { useSelector, useDispatch } from "react-redux";
-import { setActiveBlog, updateBlogs } from "../../actions"
+import { setActiveBlog, updateBlogs } from "../../redux";
 import { Dispatch } from "redux";
 import  * as utils  from "../../utils/localstorage";
 
 function BlogDetails() {
   console.log("Blog Details init");
   const [editClicked, setEditClicked] = useState(false);  
-  const {blog, index} = useSelector((state: BlogAppStore) => state.selectedBlog);
+  const {blog, index} = useSelector((state: BlogAppStore) => state.blogs.selectedBlog);
   const dispatch: Dispatch = useDispatch();
   const [descreption, setDescription] =  useState(blog?.details);
   utils.setData("isEdited", editClicked);
@@ -17,8 +17,8 @@ function BlogDetails() {
   const saveContent = () => {
     onEditToggle();
     const modifiedBlog = {...blog, ...{details:descreption}};
-    dispatch(setActiveBlog(modifiedBlog,index));
-    dispatch(updateBlogs(modifiedBlog,index));
+    dispatch(setActiveBlog({blog:modifiedBlog,index:index}));
+    dispatch(updateBlogs({blog:modifiedBlog,index:index}));
     utils.setData("isEdited", editClicked);
   };
 
@@ -47,9 +47,11 @@ function BlogDetails() {
           </>
         ) : (
           <>
-            <TextArea value={descreption} name="description" onChange={onDestinationChange} />    
-            <Button onClick={onEditToggle} classSelector="secondary"> Cancel </Button>
-            <Button onClick={saveContent} classSelector="primary">Save Content</Button>
+            <TextArea value={descreption} name="description" onChange={onDestinationChange} />  
+            <div>  
+              <Button onClick={onEditToggle} classSelector="secondary"> Cancel </Button>
+              <Button onClick={saveContent} classSelector="primary">Save Content</Button>
+            </div>
           </>
         )}
       </div>

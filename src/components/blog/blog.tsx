@@ -1,7 +1,7 @@
 import React, { MouseEvent } from "react";
 import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
-import { setActiveBlog } from "../../actions";
+import { setActiveBlog } from "../../redux";
 import styles from "./blog.module.scss";
 import { Heading } from '..'
 import  * as utils  from "../../utils/localstorage";
@@ -13,12 +13,12 @@ function Blog({ blog, index }: BlogProps) {
   const onItemClick = (event:MouseEvent<HTMLElement>) => {
     if(utils.getData("isEdited")){
       if(confirm("Are you sure you want to go next without saving ?")){
-        dispatch(setActiveBlog(blog,index));
+        dispatch(setActiveBlog({blog,index}));
       } else {
         event.preventDefault();
       }
     } else {
-      dispatch(setActiveBlog(blog,index));
+      dispatch(setActiveBlog({blog,index}));
     }
 
   }

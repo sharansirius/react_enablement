@@ -1,13 +1,23 @@
-type ThemeAction = {
-  type: string;
-  theme: string;
+type BlogAppStore = {
+  blogs: BlogState;
+  theme: string; 
+  members: Array<Member> 
 };
 
-type FilterAction = {
+type BlogState = {
+  list: Array<Blog>,
+  selectedBlog: {
+    blog: Blog;
+    index: number;
+  }
+  filters:Array<Filter>;
+}
+
+type Blog = {
+  details: string;
+  photo: string;
+  title: string;
   type: string;
-  filters: Array<Filter>;
-  filter?: Filter;
-  index?: number;
 };
 
 type Filter = {
@@ -17,30 +27,37 @@ type Filter = {
 
 type BlogAction = {
   type: string;
-  data: Array<Blog>;
-  blog?: Blog;
-  index?: number;
+  data: Blog|Array<Blog>|Array<Filter>|UpdateFilterActionBlogAction|SelectedBlogAction;
 };
 
-type SelectedBlogAction = {
+type ThemeAction = {
   type: string;
+  theme: string;
+};
+
+type UpdateFilterActionBlogAction = {
+  index: number;
+  filter: Filter
+}
+
+type SelectedBlogAction = {
   blog: Blog;
   index: number;
 };
 
-type BlogAppStore = {
-  blogs: Array<Blog>;
-  theme: string;
-  selectedBlog: {
-    blog: Blog;
-    index: number;
-  };
-  filters:Array<Filter>
+type UpdateBlogsAction = {
+  blog: Blog;
+  index: number;
 };
 
-type Blog = {
-  details: string;
-  photo: string;
-  title: string;
+type Member = {
+  name: string,
+  photo: string,
+  username: string,
+}
+
+type MemberAction = {
   type: string;
-};
+  payload: Array<Member>;
+}
+

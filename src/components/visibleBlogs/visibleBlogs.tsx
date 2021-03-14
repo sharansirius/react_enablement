@@ -4,28 +4,28 @@ import * as _services from "../../services/BlogService";
 import { List } from "../";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "redux";
-import { blogsInit, initFilters, setActiveBlog, addFilters } from "../../actions";
+import { blogsInit, initFilters, setActiveBlog, addFilters } from "../../redux";
 
 function VisibleBlogs({ skey }: VisibleBlogsProp) {
   console.log("VisibleBlogs init");
   const dispatch: Dispatch = useDispatch();
   const [data, setData] = useState<Blog[]>([]);
 
-  const blogs = useSelector((state: BlogAppStore) => state.blogs);
-  const filters = useSelector((state: BlogAppStore) => state.filters);
+  const blogs:Array<Blog> = useSelector((state: BlogAppStore) => state.blogs.list);
+  const filters = useSelector((state: BlogAppStore) => state.blogs.filters);
 
   /** Generate the filters dynamically */
-  const getFiltersList = (blogs: Array<Blog>, resetFilters?:boolean): Array<Filter> => {
+  const getFiltersList = (blogsList: Array<Blog>, resetFilters?:boolean): Array<Filter> => {
     let filtersArray: Array<Filter> = [];
     if(resetFilters){
-      blogs.map((blog) => {
+      blogsList.map((blog) => {
           if (filters.every((filter) => filter.name !== blog.type)) {
             filtersArray.push({ name: blog.type, checked: true });
           }
       });   
       filtersArray = [...filtersArray, ...filters];
     } else {
-      blogs.map((blog) => {
+      blogsList.map((blog) => {
         if (filtersArray.length > 0) {
           if (filtersArray.every((filter) => filter.name !== blog.type)) {
             filtersArray.push({ name: blog.type, checked: true });
@@ -41,7 +41,7 @@ function VisibleBlogs({ skey }: VisibleBlogsProp) {
   /** Reset filters and blogs data */
   const resetBlogsBasedOnFilter = () =>{
     if (blogs && blogs.length > 0 && filters && filters.length > 0) {
-      const checkedFilters:Array<string> = []
+      const checkedFilters:Array<string> = [];
       filters.forEach((filter) => {
         if (filter.checked) checkedFilters.push(filter.name);
       });
@@ -60,7 +60,7 @@ function VisibleBlogs({ skey }: VisibleBlogsProp) {
       if (res && res.data && res.data.length > 0) {
         setData(res.data);
         dispatch(blogsInit(res.data));
-        dispatch(setActiveBlog(res.data[0], 0));
+        dispatch(setActiveBlog({blog:res.data[0], index:0}));
         dispatch(initFilters(getFiltersList(res.data)));
       }
     });

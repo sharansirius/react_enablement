@@ -16,6 +16,6 @@ export { default as CreateBlog} from "./createBlog/createBlog";
 export { default as SearchAndCreateNew} from "./searchAndCreateNew/searchAndCreateNew";
 export { default as Modal} from "./modal/modal";
 export { default as Member} from "./member/member";
-export { default as Members} from "./members/members";
-export { default as ErrorBoundary} from "./errorBoundary/errorBoundary";
+export { default as MembersList} from "./membersList/membersList";
 export { default as Heading} from "./heading/heading";
+export { default as ErrorBoundary} from "./errorBoundary/errorBoundary";

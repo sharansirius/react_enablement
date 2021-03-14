@@ -3,7 +3,7 @@ import styles from "./createBlog.module.scss";
 import { Modal, Input, TextArea, Button, Heading } from "../";
 import { Dispatch } from "redux";
 import { useDispatch } from "react-redux";
-import { addBlog } from "../../actions";
+import { addBlog } from "../../redux";
 
 function CreateBlog({clickToHide}:CreateBlogProps) { 
   console.log("CreateBlog init");

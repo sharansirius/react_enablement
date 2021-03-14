@@ -1,22 +1,13 @@
-import { ADD_BLOG, BLOGS_INIT, UPDATE_BLOGS, SEARCH_BLOGS } from "./membersTypes";
-const blogs = (state = [], action: BlogAction ) => {
+import { FETCH_MEMBERS_FAILURE, FETCH_MEMBERS_SUCCESS } from "./membersTypes";
+const members = (state = [], action: MemberAction ) => {
   switch (action.type) {
-    case ADD_BLOG:
-      return [...state, action.blog];
-    case BLOGS_INIT:
-      return [...state, ...action.data];
-    case UPDATE_BLOGS:
-      return state.map((blog:Blog)=>{
-        if(blog.title === action.blog?.title){
-          blog.details = action.blog?.details;
-        }
-        return blog;
-      })
-    case SEARCH_BLOGS:
-      return state
+    case FETCH_MEMBERS_FAILURE:
+        return state
+    case FETCH_MEMBERS_SUCCESS:
+        return action.payload
     default:
       return state;
   }
 };
 
-export default blogs;
+export default members;

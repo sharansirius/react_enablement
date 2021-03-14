@@ -1,14 +1,11 @@
 import { combineReducers } from 'redux';
 import blogs from './blogs/blogsReducer';
 import theme from './theme/themeReducer';
-import selectedBlog from './selectedBlog/selectedBlogReducer';
-import filters from './filters/filtersReducer';
-
+import members from './members/membersReducer'
 const rootReducer = combineReducers({
     blogs,
     theme,
-    selectedBlog,
-    filters
+    members
 });
 
 export default rootReducer;

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from "./buttonGroup.module.scss";
-import { setTheme } from "../../actions";
+import { setTheme } from "../../redux";
 import { Dispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Members } from "../../components";
+import { Button, MembersList } from "../../components";
 
 function ButtonGroup() {
   console.log("ButtonGroup init");
@@ -19,7 +19,7 @@ function ButtonGroup() {
     <div className={styles.buttonGroup}>
       <Button classSelector="full" onClick={()=> setShowMembers(true)}> View Members </Button>
       <Button classSelector="full" onClick={toggleTheme}> Switch to {toogleTo} theme</Button>
-      {showMembers && <Members clickToHide={()=>setShowMembers(false)}/>}
+      {showMembers && <MembersList clickToHide={()=>setShowMembers(false)}/>}
     </div>
   );
 }
