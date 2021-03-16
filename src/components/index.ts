@@ -18,4 +18,5 @@ export { default as Modal} from "./modal/modal";
 export { default as Member} from "./member/member";
 export { default as MembersList} from "./membersList/membersList";
 export { default as Heading} from "./heading/heading";
+export { default as BlogForm} from "./blogForm/blogForm";
 export { default as ErrorBoundary} from "./errorBoundary/errorBoundary";
