@@ -6,7 +6,7 @@ export const checkSupport = ()=> {
     }    
 }
 
-export const getData = (key:string) => {
+export const getLocalData = (key:string) => {
     try {
         return JSON.parse(localStorage.getItem(key) as string);
     } catch(e) {
@@ -16,7 +16,7 @@ export const getData = (key:string) => {
 }
 
 
-export const setData = (key:string,data:any) => {
+export const setLocalData = (key:string,data:any) => {
     try {
         return localStorage.setItem(key,JSON.stringify(data));
     } catch(e) {

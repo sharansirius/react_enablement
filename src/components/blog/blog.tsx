@@ -11,7 +11,8 @@ function Blog({ blog, index }: BlogProps) {
   const dispatch: Dispatch = useDispatch();
 
   const onItemClick = (event:MouseEvent<HTMLElement>) => {
-    if(utils.getData("isEdited")){
+    if(utils.getLocalData("isEdited")){
+      utils.setLocalData("isEdited", false);
       if(confirm("Are you sure you want to go next without saving ?")){
         dispatch(setActiveBlog({blog,index}));
       } else {
