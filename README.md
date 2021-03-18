@@ -1,6 +1,6 @@
 # Project Setup as on FEB 2021
 
-### ----- Create React Application ----- 
+### ---------- Create React Application ---------- 
 
 ##### `npx create-react-app my-app --template typescript`
 
@@ -8,7 +8,7 @@
 
 ##### `yarn create react-app my-app --template typescript`
 
-### ----- Add SCSS to your applicaiton ----- 
+### ---------- Add SCSS to your applicaiton ---------- 
 
 ##### `npm i --save-dev node-sass`
 
@@ -29,7 +29,7 @@ if there is some error like " Couldn't find a declaration file for module 'react
 That should solve your issue, while I was setting up this project that was common setup issue.
 
 
-###  ----- Setup eslint ----- 
+###  ---------- Setup eslint ---------- 
 
 I recommend and prefer installing eslint this way, this approach will take care of creating the eslint config file, downloading all the eslint dependencies. If you prefer not to install eslint globally, feel free to figure out other solutions online.
 
@@ -128,7 +128,7 @@ Try running application once again to make sure it is all running without any er
 
 ##### `npm start`
 
-### ----- Set up Pre-Commit Hook ----- 
+### ---------- Set up Pre-Commit Hook ---------- 
 husky is a tool that allows to set up Git Hooks easily. We could set up a pre-commit hook with husky that will make sure the ESLint and Prettier scripts are run before the code is committed to your repository.
 
 ##### `npm install --save-dev husky`
@@ -140,7 +140,7 @@ husky is a tool that allows to set up Git Hooks easily. We could set up a pre-co
   }
   ```
 
-###  ----- Adding Redux ----- 
+###  ---------- Adding Redux ---------- 
 
 
 ##### `npm install redux react-redux redux-thunk`
@@ -150,7 +150,7 @@ We also have to install their types as development dependencies to help TypeScri
 ##### `npm install -D @types/redux @types/react-redux @types/redux-thunk`
 
 
-###  ----- Okie what is that Thunk thing ----- 
+###  ---------- Okie what is that Thunk thing ---------- 
 With a plain basic Redux store, you can only do simple synchronous updates by dispatching an action. Middleware extends the store's abilities, and lets you write async logic that interacts with the store. Thunks are the recommended middleware for basic Redux side effects logic, including complex synchronous logic that needs access to the store, and simple async logic like AJAX requests.
 
 
