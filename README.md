@@ -12,11 +12,15 @@
 
 ##### `npm i --save-dev node-sass`
 
+##### or
+
+##### `yarn add node-sass -D (or) yarn add node-sass --dev`
+
 Rename the App.css file to App.scss and change the path where ever it is being imported
 
 Try running application 
 
-##### `npm start`, 
+##### `npm start`
 
 if there is some error like " Couldn't find a declaration file for module 'react "
 
