@@ -1,4 +1,13 @@
 # Project Setup as on FEB 2021
+- [Create React Application] (https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------create-react-application----------------------)
+- [Add SCSS to your applicaiton] (https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------add-scss-to-your-applicaiton----------------------)
+- [Setup eslint] (https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------setup-eslint----------------------)
+- [Set up Pre-Commit Hook] (https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------set-up-pre-commit-hook----------------------)
+- [Adding Redux] (https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------adding-redux----------------------)
+- [Okie what is that Thunk thing] (https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------okie-what-is-that-thunk-thing----------------------)
+
+
+
 
 ### --------------------  Create React Application  -------------------- 
 
@@ -150,7 +159,7 @@ We also have to install their types as development dependencies to help TypeScri
 ##### `npm install -D @types/redux @types/react-redux @types/redux-thunk`
 
 
-###  --------------------  Okie what is that Thunk thing  -------------------- 
+###  --------------------  Okie, what is that Thunk thing  -------------------- 
 With a plain basic Redux store, you can only do simple synchronous updates by dispatching an action. Middleware extends the store's abilities, and lets you write async logic that interacts with the store. Thunks are the recommended middleware for basic Redux side effects logic, including complex synchronous logic that needs access to the store, and simple async logic like AJAX requests.
 
 
