@@ -38,6 +38,56 @@ I recommend and prefer installing eslint this way, this approach will take care 
 
 You will be asked some series of questions and I ended up getting this eslint config file
 
+#### How would you like to use ESLint?
+
+#### To check syntax only => 
+it helps you correct your syntax and make sure it conform to standard.
+##### To check syntax and find problems => 
+to help you check for syntax correctness and also help to find any problems in your code base
+##### To check syntax, find problems, and enforce code style_ => 
+to help you check for syntax, find problem and enforce style, enforcing style means to conforms to a particular coding standard such as Airbnb, Google and other Standard coding style. But I always go for the last option the one with syntax, find problems and enforce code style
+
+#### What type of modules does your project use?
+
+##### Javascript module (import/export) => 
+if your project has babel installed then you definitely need to choose this option. If you are working on a project such as React, Vue, Angular e.t.c they all use babel so you need choose this option.
+##### CommonJS (require/exports) => 
+this option is meant for commonJS that has nothing to do with babel, maybe your nodejs project and any other javascript project
+
+#### Which framework does your project use?
+
+##### React => 
+if you are using react in/for your project then this option is for you
+##### Vue => 
+if you are using Vue in/for your project then this option is for you
+##### None of these => 
+if you are using neither React or Vue in your project choose this option
+
+#### Where does your code run?
+
+##### Browser => 
+if your project runs on browser e.g React, Angular, Vue e.t.c then go for this option
+##### Node => 
+if your project is a node based then gladly choose this option
+
+#### How would you like to define a style for your project?
+
+##### Use a popular style guide => 
+• This allows you to choose from set of popular style such as Airbnb,Standard and Google style guide, it is advisable to choose this option in order for you to follow popular and most used style guide and i will be choosen this option in this post.
+• Answer questions about your style: This is for custom style guide
+• Inspect your JavaScript file(s).: custom style guide
+
+#### What format do you want your config file to be in?
+
+##### Javascript => 
+whether you want your eslint config file to be in .js file
+##### YAML => 
+whether you want your eslint config file to be in .yaml file
+##### JSON => 
+whether you want your eslint config file to be in .json file you can choose any option in this section
+
+after you have chosen your preferred configuration file type it will then prompt you to install all necessary dependencies. after all neccessary dependencies has been successfully installed it will now generate a config file with ".eslintrc"."js/json/yaml".
+
 ```sh
 module.exports = {
   env: {
