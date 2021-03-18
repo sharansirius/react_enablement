@@ -1,10 +1,10 @@
 # Project Setup as on FEB 2021
-- [Create React Application] (https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------create-react-application----------------------)
-- [Add SCSS to your applicaiton] (https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------add-scss-to-your-applicaiton----------------------)
-- [Setup eslint] (https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------setup-eslint----------------------)
-- [Set up Pre-Commit Hook] (https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------set-up-pre-commit-hook----------------------)
-- [Adding Redux] (https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------adding-redux----------------------)
-- [Okie what is that Thunk thing] (https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------okie-what-is-that-thunk-thing----------------------)
+- [Create React Application](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------create-react-application----------------------)
+- [Add SCSS to your applicaiton](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------add-scss-to-your-applicaiton----------------------)
+- [Setup eslint](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------setup-eslint----------------------)
+- [Set up Pre-Commit Hook](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------set-up-pre-commit-hook----------------------)
+- [Adding Redux](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------adding-redux----------------------)
+- [Okie what is that Thunk thing](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------okie-what-is-that-thunk-thing----------------------)
 
 
 
