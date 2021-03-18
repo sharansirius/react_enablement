@@ -73,9 +73,9 @@ if your project is a node based then gladly choose this option
 #### How would you like to define a style for your project?
 
 ##### Use a popular style guide => 
-• This allows you to choose from set of popular style such as Airbnb,Standard and Google style guide, it is advisable to choose this option in order for you to follow popular and most used style guide and i will be choosen this option in this post.
-• Answer questions about your style: This is for custom style guide
-• Inspect your JavaScript file(s).: custom style guide
+- This allows you to choose from set of popular style such as Airbnb,Standard and Google style guide, it is advisable to choose this option in order for you to follow popular and most used style guide and i will be choosen this option in this post.
+- Answer questions about your style: This is for custom style guide
+- Inspect your JavaScript file(s).: custom style guide
 
 #### What format do you want your config file to be in?
 
