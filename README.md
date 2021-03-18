@@ -45,7 +45,7 @@ I recommend and prefer installing eslint this way, this approach will take care 
 ##### `npm install -g eslint`
 ##### `eslint --init`
 
-You will be asked some series of questions and I ended up getting this eslint config file
+You will be asked some series of questions and ended up getting eslint config file something like below. You can skip reading this section if you know what option you have to choose
 
 #### How would you like to use ESLint?
 
