@@ -4,7 +4,7 @@
 - [Setup eslint](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------setup-eslint----------------------)
 - [Set up Pre-Commit Hook](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------set-up-pre-commit-hook----------------------)
 - [Adding Redux](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------adding-redux----------------------)
-- [Okie what is that Thunk thing](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------okie-what-is-that-thunk-thing----------------------)
+- [Okie, what is that Thunk thing](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------okie-what-is-that-thunk-thing----------------------)
 
 
 
