@@ -1,8 +1,8 @@
 import React from "react";
-import "./app.scss";
+import "./App.scss";
 import "./theme.scss";
 import { Provider } from "react-redux";
-import { ErrorBoundary } from "./components/";
+import { ErrorBoundary } from "./components";
 import store from "./redux/store";
 import { Main } from "./containers";
 
