@@ -38,14 +38,82 @@ if there is some error like " Couldn't find a declaration file for module 'react
 That should solve your issue, while I was setting up this project that was common setup issue.
 
 
-###  --------------------  Setup eslint  -------------------- 
+###  --------------------  Setup ESlint and Prettier  -------------------- 
 
-I recommend and prefer installing eslint this way, this approach will take care of creating the eslint config file, downloading all the eslint dependencies. If you prefer not to install eslint globally, feel free to figure out other solutions online.
+There are two ways to Install eslint
+- Using direct commands (airbnb - a popular style guide, read Questions section for more information)
+- Installing the eslint globally
+
+#### Using direct commands
+Note, ESLint is installed with create-react-app, so you don’t need to explicitly install it. We will install the packages for Airbnb config. This command will work with yarn or npm.
+
+```sh yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-typescript eslint-plugin-jest ```
+
+```sh npx install-peerdeps --dev eslint-config-airbnb ```
+
+#### Installing the eslint globally
+If you are okie to install ESlint in your system globally, you can run the following commands and it will take care of creating the eslint config file, downloading all the eslint dependencies.
 
 ##### `npm install -g eslint`
 ##### `eslint --init`
 
-You will be asked some series of questions and ended up getting eslint config file something like below. You can skip reading this section if you know what option you have to choose
+You will be asked some series of questions, please find details about questions and what they mean in the Questions section below.
+
+```sh
+module.exports = {
+  extends: [
+    'airbnb-typescript',
+    'airbnb/hooks',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:jest/recommended',
+    'plugin:prettier/recommended'
+  ],
+  plugins: ['react', '@typescript-eslint', 'jest'],
+  env: {
+    browser: true,
+    es6: true,
+    jest: true,
+  },
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2018,
+    sourceType: 'module',
+    project: './tsconfig.json',
+  },
+  rules: {
+    'linebreak-style': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
+  },
+};
+```
+
+Please add below piece of code to scripts section
+
+```sh
+  "scripts": {
+    "format": "prettier --write src/**/*.ts{,x}",
+    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"
+    "lint:fix": "eslint --fix ."
+  }
+```
+
+Try running application once again to make sure it is all running without any errors
+##### `npm start`
+
+### Questions
 
 #### How would you like to use ESLint?
 
@@ -85,6 +153,7 @@ if your project is a node based then gladly choose this option
 - This allows you to choose from set of popular style such as Airbnb,Standard and Google style guide, it is advisable to choose this option in order for you to follow popular and most used style guide and i will be choosen this option in this post.
 - Answer questions about your style: This is for custom style guide
 - Inspect your JavaScript file(s).: custom style guide
+![Image of Yaktocat](https://miro.medium.com/max/4800/1*K51eiJl-y9IfnWFK4IcHCQ.png)
 
 #### What format do you want your config file to be in?
 
@@ -96,46 +165,6 @@ whether you want your eslint config file to be in .yaml file
 whether you want your eslint config file to be in .json file you can choose any option in this section
 
 after you have chosen your preferred configuration file type it will then prompt you to install all necessary dependencies. after all neccessary dependencies has been successfully installed it will now generate a config file with ".eslintrc"."js/json/yaml".
-
-```sh
-module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-    node: true
-  },
-  extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-  ],
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 12,
-    sourceType: "module",
-  },
-  plugins: ["react", "@typescript-eslint"],
-  rules: {
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-  }
-};
-```
-
-Please add below piece of code to scripts section
-
-```sh
-"scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
-  }
-```
-
-Try running application once again to make sure it is all running without any errors
-
-##### `npm start`
 
 ### --------------------  Set up Pre-Commit Hook  -------------------- 
 husky is a tool that allows to set up Git Hooks easily. We could set up a pre-commit hook with husky that will make sure the ESLint and Prettier scripts are run before the code is committed to your repository.
@@ -152,16 +181,21 @@ husky is a tool that allows to set up Git Hooks easily. We could set up a pre-co
 ###  --------------------  Adding Redux  -------------------- 
 
 
-##### `npm install redux react-redux redux-thunk`
+##### `npm install redux react-redux (or) yarn add redux react-redux `
 
-We also have to install their types as development dependencies to help TypeScript understand the libraries.
+We should install their types as development dependencies to help TypeScript understand the libraries.
 
-##### `npm install -D @types/redux @types/react-redux @types/redux-thunk`
+##### `npm install -D @types/redux @types/react-redux`
 
 
-###  --------------------  Okie, what is that Thunk thing  -------------------- 
+###  --------------------  Adding Thunk  -------------------- 
+
+##### `npm install redux-thunk (or) yarn add redux-thunk `
+
+###### Okie, what is that Thunk thing
+
 With a plain basic Redux store, you can only do simple synchronous updates by dispatching an action. Middleware extends the store's abilities, and lets you write async logic that interacts with the store. Thunks are the recommended middleware for basic Redux side effects logic, including complex synchronous logic that needs access to the store, and simple async logic like AJAX requests.
-
+##### `npm install -D @types/redux-thunk`
 
 
 ##### `npm i @testing-library/react react-test-renderer jest-dom --save-dev`
