@@ -4,7 +4,7 @@
 - [Setup eslint](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------setup-eslint----------------------)
 - [Set up Pre-Commit Hook](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------set-up-pre-commit-hook----------------------)
 - [Adding Redux](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------adding-redux----------------------)
-- [Okie, what is that Thunk thing](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------okie-what-is-that-thunk-thing----------------------)
+- [Adding Thunk](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------adding-thunk----------------------)
 
 
 
@@ -41,66 +41,82 @@ That should solve your issue, while I was setting up this project that was commo
 ###  --------------------  Setup ESlint and Prettier  -------------------- 
 
 There are two ways to Install eslint
-- Using direct commands (airbnb - a popular style guide, read Questions section for more information)
+- Using direct commands (airbnb - a popular style guide, pelase read annexure 1 for more info)
 - Installing the eslint globally
 
 #### Using direct commands
 Note, ESLint is installed with create-react-app, so you don’t need to explicitly install it. We will install the packages for Airbnb config. This command will work with yarn or npm.
 
-```sh yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-typescript eslint-plugin-jest ```
+```sh 
+yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-typescript eslint-plugin-jest 
+```
 
-```sh npx install-peerdeps --dev eslint-config-airbnb ```
+```sh 
+npx install-peerdeps --dev eslint-config-airbnb 
+```
+
+- create .eslintrc.js
+```sh 
+  module.exports = {
+    extends: [
+      'airbnb-typescript',
+      'airbnb/hooks',
+      'plugin:@typescript-eslint/recommended',
+      'plugin:jest/recommended',
+      'plugin:prettier/recommended'
+    ],
+    plugins: ['react', '@typescript-eslint', 'jest'],
+    env: {
+      browser: true,
+      es6: true,
+      jest: true,
+    },
+    globals: {
+      Atomics: 'readonly',
+      SharedArrayBuffer: 'readonly',
+    },
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true,
+      },
+      ecmaVersion: 2018,
+      sourceType: 'module',
+      project: './tsconfig.json',
+    },
+    rules: {
+      'linebreak-style': 'off',
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      'prettier/prettier': [
+        'error',
+        {
+          endOfLine: 'auto',
+        },
+      ],
+    },
+  };
+```
+
+- Please add below piece of code to scripts section is package.json
+
+```sh
+  "scripts": {
+    "format": "prettier --write src/**/*.ts{,x}",
+    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"
+    "lint:fix": "eslint --fix ."
+  }
+```
+
 
 #### Installing the eslint globally
-If you are okie to install ESlint in your system globally, you can run the following commands and it will take care of creating the eslint config file, downloading all the eslint dependencies.
+If you want you want to follow any other design system and if you are okie to install ESlint in your system globally, you can run the following commands and it will take care of creating the eslint config file, downloading all the eslint dependencies.
 
 ##### `npm install -g eslint`
 ##### `eslint --init`
 
-You will be asked some series of questions, please find details about questions and what they mean in the Questions section below.
+You will be asked some series of questions, please find more details about it in the annexure 1. After the whole process is done you will see .eslintrc"js/json/yaml" getting generated. You might have different set of items in extends section of the file, based on what options that you are chosing during the questionare. But make sure rest of the sections match with above set of rules.
 
-```sh
-module.exports = {
-  extends: [
-    'airbnb-typescript',
-    'airbnb/hooks',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:jest/recommended',
-    'plugin:prettier/recommended'
-  ],
-  plugins: ['react', '@typescript-eslint', 'jest'],
-  env: {
-    browser: true,
-    es6: true,
-    jest: true,
-  },
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2018,
-    sourceType: 'module',
-    project: './tsconfig.json',
-  },
-  rules: {
-    'linebreak-style': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-      },
-    ],
-  },
-};
-```
-
-Please add below piece of code to scripts section
+- Please add below piece of code to scripts section is package.json
 
 ```sh
   "scripts": {
