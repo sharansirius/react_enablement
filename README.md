@@ -5,9 +5,8 @@
 - [Set up Pre-Commit Hook](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------set-up-pre-commit-hook----------------------)
 - [Adding Redux](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------adding-redux----------------------)
 - [Adding Thunk](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------adding-thunk----------------------)
+- [Possible Errors That I Came Across](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------possible-errors-that-i-came-across----------------------)
 - [Annexure 1](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------annexure-1----------------------)
-
-
 
 
 ### --------------------  Create React Application  -------------------- 
@@ -24,24 +23,13 @@
 
 ##### (or)
 
-##### `yarn add node-sass -D (or) yarn add node-sass --dev`
+##### `yarn add node-sass -D`
 
 Rename the App.css file to App.scss and change the path where ever it is being imported
 
 Try running application 
 
 ##### `npm start`
-
-if there is some error like " Couldn't find a declaration file for module 'react "
-
-##### `npm install @types/react`
-
-##### (or)
-
-##### `yarn add @types/react`
-
-That should solve your issue, while I was setting up this project that was common setup issue.
-
 
 ###  --------------------  Setup ESlint Jest and Prettier  -------------------- 
 
@@ -92,13 +80,15 @@ npx install-peerdeps --dev eslint-config-airbnb
     rules: {
       'linebreak-style': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-use-before-define": ["error"],
       'prettier/prettier': [
         'error',
         {
-          endOfLine: 'auto',
-        },
-      ],
-    },
+          endOfLine: 'auto'
+        }
+      ]
+    }
   };
 ```
 
@@ -107,7 +97,7 @@ npx install-peerdeps --dev eslint-config-airbnb
 ```sh
   "scripts": {
     "format": "prettier --write src/**/*.ts{,x}",
-    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"
+    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
     "lint:fix": "eslint --fix ."
   }
 ```
@@ -142,7 +132,7 @@ You will be asked some series of questions, please find more details about it in
 ```sh
   "scripts": {
     "format": "prettier --write src/**/*.ts{,x}",
-    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"
+    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
     "lint:fix": "eslint --fix ."
   }
 ```
@@ -193,6 +183,38 @@ With a plain basic Redux store, you can only do simple synchronous updates by di
 
 ##### `yarn add @types/redux-thunk -D`
 
+
+
+###  --------------------  Possible Errors That I Came Across  -------------------- 
+
+- If you come across some error like " Couldn't find a declaration file for module 'react "
+
+##### `npm install @types/react`
+
+##### (or)
+
+##### `yarn add @types/react`
+
+That should solve your issue, while I was setting up this project that was common setup issue.
+
+-  In .eslintrc.json/js, what ever style approach you are taking, make sure that is put on the top in the extends array for example
+```sh 
+  module.exports = {
+    extends: [
+      'airbnb-typescript',
+      'airbnb/hooks',
+      'plugin:@typescript-eslint/recommended',
+      'plugin:jest/recommended',
+    ]
+```
+```sh 
+  module.exports = {
+    extends: [
+      'standard',
+      'plugin:@typescript-eslint/recommended',
+      'plugin:jest/recommended',
+    ]
+```
 
 ### --------------------  Annexure 1  -------------------- 
 
