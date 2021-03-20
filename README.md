@@ -1,10 +1,11 @@
 # Project Setup as on FEB 2021
 - [Create React Application](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------create-react-application----------------------)
 - [Add SCSS to your applicaiton](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------add-scss-to-your-applicaiton----------------------)
-- [Setup eslint](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------setup-eslint----------------------)
+- [Setup ESlint and Prettier](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------setup-eslint-and-prettier----------------------)
 - [Set up Pre-Commit Hook](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------set-up-pre-commit-hook----------------------)
 - [Adding Redux](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------adding-redux----------------------)
 - [Adding Thunk](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------adding-thunk----------------------)
+- [Annexure 1](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------annexure-1----------------------)
 
 
 
@@ -38,13 +39,13 @@ if there is some error like " Couldn't find a declaration file for module 'react
 That should solve your issue, while I was setting up this project that was common setup issue.
 
 
-###  --------------------  Setup ESlint and Prettier  -------------------- 
+###  --------------------  Setup ESlint Jest and Prettier  -------------------- 
 
 There are two ways to Install eslint
 - Using direct commands (airbnb - a popular style guide, pelase read annexure 1 for more info)
 - Installing the eslint globally
 
-#### Using direct commands
+#### Using direct commands - Approach 1
 Note, ESLint is installed with create-react-app, so you don’t need to explicitly install it. We will install the packages for Airbnb config. This command will work with yarn or npm.
 
 ```sh 
@@ -108,13 +109,21 @@ npx install-peerdeps --dev eslint-config-airbnb
 ```
 
 
-#### Installing the eslint globally
+#### Installing the eslint globally - Approach 2
 If you want you want to follow any other design system and if you are okie to install ESlint in your system globally, you can run the following commands and it will take care of creating the eslint config file, downloading all the eslint dependencies.
 
 ##### `npm install -g eslint`
 ##### `eslint --init`
 
 You will be asked some series of questions, please find more details about it in the annexure 1. After the whole process is done you will see .eslintrc"js/json/yaml" getting generated. You might have different set of items in extends section of the file, based on what options that you are chosing during the questionare. But make sure rest of the sections match with above set of rules.
+
+#### Installing the Prettier
+
+##### `yarn add -D prettier eslint-config-prettier eslint-plugin-prettier`
+
+#### Installing Jest
+##### `npm i @testing-library/react react-test-renderer jest-dom --save-dev`
+
 
 - Please add below piece of code to scripts section is package.json
 
@@ -129,7 +138,40 @@ You will be asked some series of questions, please find more details about it in
 Try running application once again to make sure it is all running without any errors
 ##### `npm start`
 
-### Questions
+### --------------------  Set up Pre-Commit Hook  -------------------- 
+husky is a tool that allows to set up Git Hooks easily. We could set up a pre-commit hook with husky that will make sure the ESLint and Prettier scripts are run before the code is committed to your repository.
+
+##### `npm install --save-dev husky`
+```sh
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+  ```
+
+###  --------------------  Adding Redux  -------------------- 
+
+
+##### `npm install redux react-redux (or) yarn add redux react-redux `
+
+We should install their types as development dependencies to help TypeScript understand the libraries.
+
+##### `npm install -D @types/redux @types/react-redux`
+
+
+###  --------------------  Adding Thunk  -------------------- 
+
+##### `npm install redux-thunk (or) yarn add redux-thunk `
+
+###### Okie, what is that Thunk thing
+
+With a plain basic Redux store, you can only do simple synchronous updates by dispatching an action. Middleware extends the store's abilities, and lets you write async logic that interacts with the store. Thunks are the recommended middleware for basic Redux side effects logic, including complex synchronous logic that needs access to the store, and simple async logic like AJAX requests.
+##### `npm install -D @types/redux-thunk`
+
+### Annexure 1
+
+#### Series of questions asked while setting up the eslint with approach 2 where we are using eslint installed globally.
 
 #### How would you like to use ESLint?
 
@@ -181,37 +223,3 @@ whether you want your eslint config file to be in .yaml file
 whether you want your eslint config file to be in .json file you can choose any option in this section
 
 after you have chosen your preferred configuration file type it will then prompt you to install all necessary dependencies. after all neccessary dependencies has been successfully installed it will now generate a config file with ".eslintrc"."js/json/yaml".
-
-### --------------------  Set up Pre-Commit Hook  -------------------- 
-husky is a tool that allows to set up Git Hooks easily. We could set up a pre-commit hook with husky that will make sure the ESLint and Prettier scripts are run before the code is committed to your repository.
-
-##### `npm install --save-dev husky`
-```sh
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
-  }
-  ```
-
-###  --------------------  Adding Redux  -------------------- 
-
-
-##### `npm install redux react-redux (or) yarn add redux react-redux `
-
-We should install their types as development dependencies to help TypeScript understand the libraries.
-
-##### `npm install -D @types/redux @types/react-redux`
-
-
-###  --------------------  Adding Thunk  -------------------- 
-
-##### `npm install redux-thunk (or) yarn add redux-thunk `
-
-###### Okie, what is that Thunk thing
-
-With a plain basic Redux store, you can only do simple synchronous updates by dispatching an action. Middleware extends the store's abilities, and lets you write async logic that interacts with the store. Thunks are the recommended middleware for basic Redux side effects logic, including complex synchronous logic that needs access to the store, and simple async logic like AJAX requests.
-##### `npm install -D @types/redux-thunk`
-
-
-##### `npm i @testing-library/react react-test-renderer jest-dom --save-dev`
