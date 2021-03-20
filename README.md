@@ -1,7 +1,7 @@
 # Project Setup as on FEB 2021
 - [Create React Application](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------create-react-application----------------------)
 - [Add SCSS to your applicaiton](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------add-scss-to-your-applicaiton----------------------)
-- [Setup ESlint and Prettier](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------setup-eslint-and-prettier----------------------)
+- [Setup ESlint, Jest and Prettier](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------setup-eslint-jest-and-prettier----------------------)
 - [Set up Pre-Commit Hook](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------set-up-pre-commit-hook----------------------)
 - [Adding Redux](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------adding-redux----------------------)
 - [Adding Thunk](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------adding-thunk----------------------)
@@ -169,7 +169,7 @@ We should install their types as development dependencies to help TypeScript und
 With a plain basic Redux store, you can only do simple synchronous updates by dispatching an action. Middleware extends the store's abilities, and lets you write async logic that interacts with the store. Thunks are the recommended middleware for basic Redux side effects logic, including complex synchronous logic that needs access to the store, and simple async logic like AJAX requests.
 ##### `npm install -D @types/redux-thunk`
 
-### Annexure 1
+### --------------------  Annexure 1  -------------------- 
 
 #### Series of questions asked while setting up the eslint with approach 2 where we are using eslint installed globally.
 
@@ -211,7 +211,9 @@ if your project is a node based then gladly choose this option
 - This allows you to choose from set of popular style such as Airbnb,Standard and Google style guide, it is advisable to choose this option in order for you to follow popular and most used style guide and i will be choosen this option in this post.
 - Answer questions about your style: This is for custom style guide
 - Inspect your JavaScript file(s).: custom style guide
-![Image of Yaktocat](https://miro.medium.com/max/4800/1*K51eiJl-y9IfnWFK4IcHCQ.png)
+
+Comparision between popular style guides in the market
+![Image](https://miro.medium.com/max/4800/1*K51eiJl-y9IfnWFK4IcHCQ.png)
 
 #### What format do you want your config file to be in?
 
