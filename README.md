@@ -5,7 +5,7 @@
 - [Setup ESlint, Jest and Prettier](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------setup-eslint-jest-and-prettier----------------------)
 - [Set up Pre-Commit Hook](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------set-up-pre-commit-hook----------------------)
 - [Adding Redux](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------adding-redux----------------------)
-- [Adding Thunk](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------adding-thunk----------------------)
+- [Adding Thunk](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------adding-thunk---------------------)
 - [Installing useful dev modules](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------installing-useful-dev-modules---------------------)
 - [Possible Errors That I Came Across](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------possible-errors-that-i-came-across----------------------)
 - [Annexure 1](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------annexure-1----------------------)
@@ -201,6 +201,12 @@ With a plain basic Redux store, you can only do simple synchronous updates by di
 ##### (or)
 
 ##### `yarn add -D redux-devtools-extension redux-logger`
+
+##### `npm i --save-dev @types/redux-logger`
+
+##### (or)
+
+##### `Yarn add @types/redux-logger -D`
 
 The above two tools will help in logging the store and action objects when ever they are manipulated.
 
