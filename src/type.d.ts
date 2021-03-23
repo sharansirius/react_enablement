@@ -22,7 +22,7 @@ type NextWebVitalsMetrics = {
  * @see https://web.dev/vitals/ Essential metrics for a healthy site
  * @see https://nextjs.org/blog/next-9-4#integrated-web-vitals-reporting
  */
-export type NextWebVitalsMetricsReport = {
+type NextWebVitalsMetricsReport = {
   reportedCount: number; // Number of times a report has been sent, kinda help to trace how long a same client-side session was
   reportId: string; // ID of the "report", helps grouping reports with different data but same reportId together when analysing data
   metrics: {

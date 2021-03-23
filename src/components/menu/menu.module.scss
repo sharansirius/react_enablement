@@ -1,0 +1,16 @@
+.menu {
+  list-style: none;
+  display: flex;
+  text-transform: uppercase;
+  margin: 2px;
+  font-weight: 600;
+
+  a {
+    margin-right: 30px;
+    text-decoration: none;
+    color: white;
+  }
+  a.active {
+    color: red;
+  }
+}
