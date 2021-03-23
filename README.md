@@ -5,7 +5,7 @@
 - [Setup ESlint, Jest and Prettier](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------setup-eslint-jest-and-prettier----------------------)
 - [Set up Pre-Commit Hook](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------set-up-pre-commit-hook----------------------)
 - [Adding Redux](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------adding-redux----------------------)
-- [Installing useful dev modules](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------installing-useful-dev-modules----------------------)
+- [Installing useful dev modules](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------installing-useful-dev-modules---------------------)
 - [Adding Thunk](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------adding-thunk----------------------)
 - [Possible Errors That I Came Across](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------possible-errors-that-i-came-across----------------------)
 - [Annexure 1](https://github.com/sharansirius/react_enablement/tree/level-3-2#----------------------annexure-1----------------------)
