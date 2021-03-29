@@ -49,6 +49,8 @@ There are two ways to Install eslint
 - Using direct commands (airbnb - a popular style guide, pelase read annexure 1 for more info)
 - Installing the eslint globally
 
+#### -------------------------------------------------------------------------------------------------------------
+
 #### Using direct commands - Approach 1
 
 Note, ESLint is installed with create-react-app, so you don’t need to explicitly install it. We will install the packages for Airbnb config.
@@ -129,6 +131,8 @@ If you want you want to follow any other design system and if you are okie to in
 ##### `eslint --init`
 
 You will be asked some series of questions, please find more details about it in the annexure 1. After the whole process is done you will see .eslintrc"js/json/yaml" getting generated. You might have different set of items in extends section of the file, based on what options that you are chosing during the questionare. But make sure rest of the sections match with above set of rules.
+
+#### -------------------------------------------------------------------------------------------------------------
 
 #### Installing the Prettier
 
