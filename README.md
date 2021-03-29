@@ -10,7 +10,7 @@
 #### If you are planning to add redux to your project
 
 - Step 5 : [Adding Redux](https://github.com/sharansirius/react_enablement/tree/level-3-2#step-5-----------------------adding-redux---------------------)
-- Step 6 : [Adding Thunk]https://github.com/sharansirius/react_enablement/tree/level-3-2#step-6-----------------------adding-thunk---------------------)
+- Step 6 : [Adding Thunk](https://github.com/sharansirius/react_enablement/tree/level-3-2#step-6-----------------------adding-thunk---------------------)
 - Step 7 : [Installing useful dev modules](https://github.com/sharansirius/react_enablement/tree/level-3-2#step-7-----------------------installing-useful-dev-modules---------------------)
 
 #### If you are more interested to know why you are executing above commands
@@ -238,7 +238,7 @@ The above two tools will help in logging the store and action objects when ever 
 
 ```
 
-### -------------------- Possible errors that I came across while setting up the project --------------------
+### -------- Possible errors that I came across while setting up the project --------
 
 - If you come across some error like " Couldn't find a declaration file for module 'react "
 
