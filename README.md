@@ -1,16 +1,24 @@
 # Project Setup as on MAR 2021
 
-- [Create React Application](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------create-react-application---------------------)
-- [Add SCSS to your applicaiton](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------add-scss-to-your-applicaiton---------------------)
-- [Setup ESlint, Jest and Prettier](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------setup-eslint-jest-and-prettier---------------------)
-- [Set up Pre-Commit Hook](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------set-up-pre-commit-hook---------------------)
-- [Adding Redux](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------adding-redux---------------------)
-- [Adding Thunk](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------adding-thunk---------------------)
-- [Installing useful dev modules](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------installing-useful-dev-modules---------------------)
+- Step 1 : [Create React Application](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------create-react-application---------------------)
+- Step 2 : [Add SCSS to your applicaiton](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------add-scss-to-your-applicaiton---------------------)
+- Step 3 : [Setup ESlint, Jest and Prettier](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------setup-eslint-jest-and-prettier---------------------)
+- Step 4 : [Set up Pre-Commit Hook](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------set-up-pre-commit-hook---------------------)
+
+------------- Optional -------------
+
+#### If you are planning to add redux to your project
+
+- Step 5 : [Adding Redux](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------adding-redux---------------------)
+- Step 6 : [Adding Thunk](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------adding-thunk---------------------)
+- Step 7 : [Installing useful dev modules](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------installing-useful-dev-modules---------------------)
+
+#### If you are more interested to know why you are doing each step
+
 - [Possible Errors That I Came Across](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------possible-errors-that-i-came-across---------------------)
 - [Annexure 1](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------annexure-1---------------------)
 
-### -------------------- Create React Application --------------------
+### Step 1 : -------------------- Create React Application --------------------
 
 ##### `npx create-react-app my-app --template typescript`
 
@@ -18,7 +26,9 @@
 
 ##### `yarn create react-app my-app --template typescript`
 
-### -------------------- Add SCSS to your applicaiton --------------------
+Navigate to project folder in Terminal/Command prompt for executing below commands.
+
+### Step 2 : -------------------- Add SCSS to your applicaiton --------------------
 
 ##### `npm i --save-dev node-sass`
 
@@ -26,13 +36,13 @@
 
 ##### `yarn add node-sass -D`
 
-Rename the App.css file to App.scss and change the path where ever it is being imported
+Rename the App.css and index.css files to App.scss and index.scss, change the path where ever they are being imported
 
 Try running application
 
 ##### `npm start`
 
-### -------------------- Setup ESlint Jest and Prettier --------------------
+### Step 3 : -------------------- Setup ESlint Jest and Prettier --------------------
 
 There are two ways to Install eslint
 
@@ -41,7 +51,7 @@ There are two ways to Install eslint
 
 #### Using direct commands - Approach 1
 
-Note, ESLint is installed with create-react-app, so you don’t need to explicitly install it. We will install the packages for Airbnb config. This command will work with yarn or npm.
+Note, ESLint is installed with create-react-app, so you don’t need to explicitly install it. We will install the packages for Airbnb config.
 
 ```sh
 yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-typescript eslint-plugin-jest
@@ -51,7 +61,7 @@ yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-co
 npx install-peerdeps --dev eslint-config-airbnb
 ```
 
-- create .eslintrc.js
+- create .eslintrc.js in the project root folder
 
 ```sh
   module.exports = {
@@ -150,7 +160,7 @@ Try running application once again to make sure it is all running without any er
 
 ##### `npm start`
 
-### -------------------- Set up Pre-Commit Hook --------------------
+### Step 4 : -------------------- Set up Pre-Commit Hook --------------------
 
 Husky is a tool that allows to set up Git Hooks easily. We could set up a pre-commit hook with husky that will make sure the ESLint and Prettier scripts are run before the code is committed to your repository.
 
@@ -164,7 +174,7 @@ Husky is a tool that allows to set up Git Hooks easily. We could set up a pre-co
   }
 ```
 
-### -------------------- Adding Redux --------------------
+### Step 5 : -------------------- Adding Redux --------------------
 
 ##### `npm install redux react-redux`
 
@@ -176,7 +186,7 @@ We should install their types as development dependencies to help TypeScript und
 
 ##### `npm install -D @types/redux @types/react-redux`
 
-### -------------------- Adding Thunk --------------------
+### Step 6 : -------------------- Adding Thunk --------------------
 
 ##### `npm install redux-thunk `
 
@@ -194,7 +204,7 @@ With a plain basic Redux store, you can only do simple synchronous updates by di
 
 ##### `yarn add @types/redux-thunk -D`
 
-### -------------------- Installing useful DEV modules --------------------
+### Step 7 : -------------------- Installing useful DEV modules --------------------
 
 ##### `npm install redux-devtools-extension redux-logger --dev`
 
