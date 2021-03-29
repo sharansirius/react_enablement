@@ -44,14 +44,14 @@ Please try running application once
 
 ### Step 3 : -------------------- Setup ESlint Jest and Prettier --------------------
 
+#### a) Setup ESlint
+
 There are two ways to Install eslint
 
 - Using direct commands (airbnb - a popular style guide, pelase read annexure 1 for more info)
 - Installing the eslint globally
 
-#### -------------------------------------------------------------------------------------------------------------
-
-#### Using direct commands - Approach 1
+##### Using direct commands - Approach 1
 
 Note, ESLint is installed with create-react-app, so you don’t need to explicitly install it. We will install the packages for Airbnb config.
 
@@ -118,7 +118,7 @@ npx install-peerdeps --dev eslint-config-airbnb
   }
 ```
 
-#### Installing the eslint globally - Approach 2
+##### Installing the eslint globally - Approach 2
 
 If you want you want to follow any other design system and if you are okie to install ESlint in your system globally, you can run the following commands and it will take care of creating the eslint config file, downloading all the eslint dependencies.
 
@@ -132,9 +132,7 @@ If you want you want to follow any other design system and if you are okie to in
 
 You will be asked some series of questions, please find more details about it in the annexure 1. After the whole process is done you will see .eslintrc"js/json/yaml" getting generated. You might have different set of items in extends section of the file, based on what options that you are chosing during the questionare. But make sure rest of the sections match with above set of rules.
 
-#### -------------------------------------------------------------------------------------------------------------
-
-#### Installing the Prettier
+#### b) Setup Prettier
 
 ##### `yarn add -D prettier eslint-config-prettier eslint-plugin-prettier`
 
@@ -142,7 +140,7 @@ You will be asked some series of questions, please find more details about it in
 
 ##### `npm i prettier eslint-config-prettier eslint-plugin-prettier --save-dev`
 
-#### Installing Jest
+#### c) Installing Jest
 
 ##### `npm i @testing-library/react react-test-renderer jest-dom --save-dev`
 
@@ -150,7 +148,7 @@ You will be asked some series of questions, please find more details about it in
 
 ##### `yarn add -D @testing-library/react react-test-renderer jest-dom`
 
-- Please add below piece of code to scripts section is package.json
+Please add below piece of code to scripts section is package.json
 
 ```sh
   "scripts": {
@@ -360,3 +358,4 @@ References:
 
 1. https://brygrill.medium.com/create-react-app-with-typescript-eslint-prettier-and-github-actions-f3ce6a571c97
 2. https://betterprogramming.pub/comparing-the-top-three-style-guides-and-setting-them-up-with-eslint-98ea0d2fc5b7
+3. https://medium.com/swlh/developer-checklist-react-application-initial-set-up-d4568799b825
