@@ -1,24 +1,24 @@
 # Project Setup as on MAR 2021
 
-- Step 1 : [Create React Application](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------create-react-application---------------------)
-- Step 2 : [Add SCSS to your applicaiton](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------add-scss-to-your-applicaiton---------------------)
-- Step 3 : [Setup ESlint, Jest and Prettier](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------setup-eslint-jest-and-prettier---------------------)
-- Step 4 : [Set up Pre-Commit Hook](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------set-up-pre-commit-hook---------------------)
+- Step 1 : [Create React Application](https://github.com/sharansirius/react_enablement/tree/level-3-2#step-1-----------------------create-react-application---------------------)
+- Step 2 : [Add SCSS to your applicaiton](https://github.com/sharansirius/react_enablement/tree/level-3-2#step-2-----------------------add-scss-to-your-applicaiton---------------------)
+- Step 3 : [Setup ESlint, Jest and Prettier](https://github.com/sharansirius/react_enablement/tree/level-3-2#step-3-----------------------setup-eslint-jest-and-prettier---------------------)
+- Step 4 : [Set up Pre-Commit Hook](https://github.com/sharansirius/react_enablement/tree/level-3-2#step-4-----------------------set-up-pre-commit-hook---------------------)
 
 ------------- Optional -------------
 
 #### If you are planning to add redux to your project
 
-- Step 5 : [Adding Redux](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------adding-redux---------------------)
-- Step 6 : [Adding Thunk](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------adding-thunk---------------------)
-- Step 7 : [Installing useful dev modules](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------installing-useful-dev-modules---------------------)
+- Step 5 : [Adding Redux](https://github.com/sharansirius/react_enablement/tree/level-3-2#step-5-----------------------adding-redux---------------------)
+- Step 6 : [Adding Thunk]https://github.com/sharansirius/react_enablement/tree/level-3-2#step-6-----------------------adding-thunk---------------------)
+- Step 7 : [Installing useful dev modules](https://github.com/sharansirius/react_enablement/tree/level-3-2#step-7-----------------------installing-useful-dev-modules---------------------)
 
-#### If you are more interested to know why you are doing each step
+#### If you are more interested to know why you are executing above commands
 
-- [Possible Errors That I Came Across](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------possible-errors-that-i-came-across---------------------)
+- [Possible errors that I came across while setting up the project](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------possible-errors-that-i-came-across-while-setting-up-the-project---------------------)
 - [Annexure 1](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------annexure-1---------------------)
 
-### Step 1 : -------------------- Create React Application --------------------
+### Step 1 : -------------------- Create React application --------------------
 
 ##### `npx create-react-app my-app --template typescript`
 
@@ -160,7 +160,7 @@ Try running application once again to make sure it is all running without any er
 
 ##### `npm start`
 
-### Step 4 : -------------------- Set up Pre-Commit Hook --------------------
+### Step 4 : -------------------- Set up pre-commit hook --------------------
 
 Husky is a tool that allows to set up Git Hooks easily. We could set up a pre-commit hook with husky that will make sure the ESLint and Prettier scripts are run before the code is committed to your repository.
 
@@ -204,7 +204,7 @@ With a plain basic Redux store, you can only do simple synchronous updates by di
 
 ##### `yarn add @types/redux-thunk -D`
 
-### Step 7 : -------------------- Installing useful DEV modules --------------------
+### Step 7 : -------------------- Installing useful dev modules --------------------
 
 ##### `npm install redux-devtools-extension redux-logger --dev`
 
@@ -238,7 +238,7 @@ The above two tools will help in logging the store and action objects when ever 
 
 ```
 
-### -------------------- Possible Errors That I Came Across --------------------
+### -------------------- Possible errors that I came across while setting up the project --------------------
 
 - If you come across some error like " Couldn't find a declaration file for module 'react "
 
@@ -273,7 +273,7 @@ That should solve your issue, while I was setting up this project that was commo
 
 ### -------------------- Annexure 1 --------------------
 
-#### Series of questions asked while setting up the eslint with approach 2 where we are using eslint installed globally.
+#### Series of questions asked while setting up the eslint in step 3, approach 2.
 
 #### How would you like to use ESLint?
 
