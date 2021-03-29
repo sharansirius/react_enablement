@@ -15,7 +15,7 @@
 
 #### If you are more interested to know why you are executing above commands
 
-- [Possible errors that I came across while setting up the project](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------possible-errors-that-i-came-across-while-setting-up-the-project---------------------)
+- [Possible errors that I came across while setting up the project](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------possible-errors-that-i-came-across-while-setting-up-the-project---------)
 - [Annexure 1](https://github.com/sharansirius/react_enablement/tree/level-3-2#---------------------annexure-1---------------------)
 
 ### Step 1 : -------------------- Create React application --------------------
@@ -38,7 +38,7 @@ Navigate to project folder in Terminal/Command prompt for executing below comman
 
 Rename the App.css and index.css files to App.scss and index.scss, change the path where ever they are being imported
 
-Try running application
+Please try running application once
 
 ##### `npm start`
 
@@ -162,9 +162,11 @@ Try running application once again to make sure it is all running without any er
 
 ### Step 4 : -------------------- Set up pre-commit hook --------------------
 
-Husky is a tool that allows to set up Git Hooks easily. We could set up a pre-commit hook with husky that will make sure the ESLint and Prettier scripts are run before the code is committed to your repository.
+Husky improves your commits. You can use it to lint your commit messages, run tests, lint code, etc... when you commit or push. Husky supports all Git hooks.
 
 ##### `npm install --save-dev husky`
+
+Set up the husky pre-commit hook by adding following code to our package.json
 
 ```sh
   "husky": {
@@ -240,7 +242,7 @@ The above two tools will help in logging the store and action objects when ever 
 
 ### -------- Possible errors that I came across while setting up the project --------
 
-- If you come across some error like " Couldn't find a declaration file for module 'react "
+- At step 2, If you come across some error like " Couldn't find a declaration file for module 'react "
 
 ##### `npm install @types/react`
 
@@ -250,7 +252,7 @@ The above two tools will help in logging the store and action objects when ever 
 
 That should solve your issue, while I was setting up this project that was common setup issue.
 
-- In .eslintrc.json/js, what ever style approach you are taking, make sure that is put on the top in the extends array for example
+- In step 3 while creating .eslintrc.json/js, what ever style approach you are taking, make sure that is put on the top in the extends array for example
 
 ```sh
   module.exports = {
