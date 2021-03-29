@@ -38,7 +38,7 @@ Navigate to project folder in Terminal/Command prompt for executing below comman
 
 Rename the App.css and index.css files to App.scss and index.scss, change the path where ever they are being imported
 
-Please try running application once
+Please try running application using the below command to ensure everything is working fine
 
 ##### `npm start`
 
@@ -55,9 +55,12 @@ There are two ways to Install eslint
 
 Note, ESLint is installed with create-react-app, so you don’t need to explicitly install it. We will install the packages for Airbnb config.
 
-```sh
-yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-typescript eslint-plugin-jest
-```
+##### `yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-typescript eslint-plugin-jest`
+
+##### (or)
+
+##### `npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb-typescript eslint-plugin-jest --dev`
+
 
 ```sh
 npx install-peerdeps --dev eslint-config-airbnb
@@ -108,16 +111,6 @@ npx install-peerdeps --dev eslint-config-airbnb
   };
 ```
 
-- Please add below piece of code to scripts section is package.json
-
-```sh
-  "scripts": {
-    "format": "prettier --write src/**/*.ts{,x}",
-    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
-    "lint:fix": "eslint --fix ."
-  }
-```
-
 ##### Installing the eslint globally - Approach 2
 
 If you want you want to follow any other design system and if you are okie to install ESlint in your system globally, you can run the following commands and it will take care of creating the eslint config file, downloading all the eslint dependencies.
@@ -132,7 +125,31 @@ If you want you want to follow any other design system and if you are okie to in
 
 You will be asked some series of questions, please find more details about it in the annexure 1. After the whole process is done you will see .eslintrc"js/json/yaml" getting generated. You might have different set of items in extends section of the file, based on what options that you are chosing during the questionare. But make sure rest of the sections match with above set of rules.
 
-#### b) Setup Prettier
+Open .eslintrc.js and add the following items into the extends and rules section
+
+```sh
+ extends: [
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
+  ],
+```
+
+```sh
+  rules: {
+    "linebreak-style": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
+  },
+```
+
+#### b) Installing Prettier
 
 ##### `yarn add -D prettier eslint-config-prettier eslint-plugin-prettier`
 
@@ -353,6 +370,10 @@ whether you want your eslint config file to be in .yaml file
 whether you want your eslint config file to be in .json file you can choose any option in this section
 
 after you have chosen your preferred configuration file type it will then prompt you to install all necessary dependencies. after all neccessary dependencies has been successfully installed it will now generate a config file with ".eslintrc"."js/json/yaml".
+
+Clone Project/ Download project from
+
+https://github.com/sharanainapurapu/react-boilerplate-project 
 
 References:
 
