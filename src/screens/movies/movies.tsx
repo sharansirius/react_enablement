@@ -1,13 +1,23 @@
-import React from "react";
-import styles from "./Movies.module.scss";
+import React, { useState } from "react";
+import { MovieDetails, MovieList } from "../../containers";
+import styles from "./movies.module.scss";
 
 function Movies() {
-  console.log("Movies init");
-  return <div>Movies</div>;
+  const [selectedMovie, setSlectedMovie] = useState({} as Movie);
+  const onItemClick = (movie: Movie) => {
+    setSlectedMovie(movie);
+  };
+
+  return (
+    <div className={styles.movies}>
+      <MovieList onItemClick={onItemClick} />
+      <MovieDetails data={selectedMovie} />
+    </div>
+  );
 }
 
-interface MoviesProps {
-  Movies: string;
-}
+// interface MoviesProps {
+//   Movies: string;
+// }
 
 export default React.memo(Movies);

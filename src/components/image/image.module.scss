@@ -1,0 +1,28 @@
+.image {
+  align-self: flex-start;
+
+  &.large {
+    width: 100%;
+    height: auto;
+  }
+
+  &.medium {
+    width: 210px;
+    height: auto;
+  }
+
+  &.small {
+    width: 150px;
+    height: auto;
+  }
+
+  &.xsmall {
+    width: 100px;
+    height: auto;
+  }
+
+  &.noImage {
+    height: 100%;
+    width: auto;
+  }
+}

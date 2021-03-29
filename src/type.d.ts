@@ -36,3 +36,60 @@ type NextWebVitalsMetricsReport = {
     TTFB?: NextWebVitalsMetrics; // Time to first byte, triggers on page load
   };
 };
+
+type UserAuth = {
+  isLoggedIn: boolean;
+};
+
+type UserAuthAction = {
+  type: string;
+};
+
+type MovieAction = {
+  type: string;
+  data: Movie | Array<Movie>;
+};
+
+type CineStore = {
+  auth: UserAuth;
+  movie: {
+    list: Array<Movie>;
+    selectedMovie: Movie;
+  };
+};
+
+type Teaser = {
+  name: string;
+  link: string;
+};
+
+type LotteryState = {
+  isSubmitted: boolean;
+  payload: any;
+};
+
+type LotteryAction = {
+  type: string;
+  payload: any;
+};
+
+type Movie = {
+  actors: Array<string>;
+  averageRating: number;
+  contentRating: string;
+  duration: string;
+  genres: Array<string>;
+  imdbRating: number;
+  originalTitle: string;
+  poster: string;
+  posterurl: string;
+  ratings: Array<number>;
+  releaseDate: string;
+  storyline: string;
+  title: string;
+  year: string;
+  image: string;
+  name: string;
+  likes: number;
+  index: number;
+};

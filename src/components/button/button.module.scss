@@ -1,0 +1,51 @@
+.button {
+  border: 0;
+  margin-right: 8px;
+  text-transform: capitalize;
+  text-align: left;
+  cursor: pointer;
+  font-weight: 600;
+  outline: none;
+  text-align: center;
+
+  &.primary,
+  &.secondary {
+    text-transform: uppercase;
+  }
+
+  &.primary {
+    background-color: #d8a040;
+    padding: 0.5rem 1rem;
+    color: white;
+  }
+
+  &.secondary {
+    background-color: #bf2828;
+    padding: 0.5rem 1rem;
+    color: white;
+  }
+
+  &.full {
+    width: 100%;
+  }
+
+  &.plain_uppercase {
+    background-color: transparent;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  &.plain_capitalize {
+    background-color: transparent;
+    color: white;
+    text-transform: capitalize;
+  }
+
+  &.primary_full {
+    width: 100%;
+    background-color: #d8a040;
+    padding: 1rem;
+    color: white;
+    text-transform: uppercase;
+  }
+}

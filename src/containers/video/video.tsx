@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./video.module.scss";
 
 function Video() {
-  console.log("Video init");
+  // console.log("Video init");
   return <div>Sharan</div>;
 }
 

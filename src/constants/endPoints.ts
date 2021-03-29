@@ -6,7 +6,7 @@ const ENDPOINTS = {
     PATH: "teasers",
   },
   MOVIES: {
-    PATH: "?page=",
+    PATH: "movies?page=",
   },
 };
 export default ENDPOINTS;

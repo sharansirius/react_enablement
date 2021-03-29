@@ -1,0 +1,16 @@
+.trailers {
+  padding: 2rem 0;
+
+  p.instruction {
+    padding: 0 0 1rem;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .details {
+    margin-left: 20px;
+  }
+}

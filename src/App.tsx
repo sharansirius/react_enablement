@@ -1,13 +1,14 @@
 import React from "react";
-import { Route, BrowserRouter as Router, Switch, Link } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { Home, Login, Movies, NowShowing } from "./screens";
 import { Header } from "./components";
 import "./App.scss";
+import { Main } from "./containers";
 
 function App(): React.ReactElement {
   return (
-    <>
-      <Router>
+    <Router>
+      <Main>
         <Header />
         <Switch>
           <Route path="/" exact component={Home} />
@@ -15,8 +16,8 @@ function App(): React.ReactElement {
           <Route path="/movies" component={Movies} />
           <Route path="/nowShowing" component={NowShowing} />
         </Switch>
-      </Router>
-    </>
+      </Main>
+    </Router>
   );
 }
 
