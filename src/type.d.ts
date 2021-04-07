@@ -93,3 +93,15 @@ type Movie = {
   likes: number;
   index: number;
 };
+
+type PrivateRouteProps = {
+  authenticationPath: string;
+} & RouteProps;
+
+type AdTimerConfig = {
+  adDuration: number;
+  interval: number;
+  adBanners: string[];
+  messages: { adStart: string; adStop: string };
+  forVideo: boolean;
+};

@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import styles from "./menu.module.scss";
 
 function Menu() {
-  // console.log("Menu init");
   const userAuth = useSelector((state: CineStore) => state.auth);
   return (
     <div className={styles.menu}>

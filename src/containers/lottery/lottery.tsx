@@ -11,7 +11,6 @@ function Lottery() {
     _service
       .checkForPrize(mobileNo)
       .then((res) => {
-        // console.log(res);
         if (res && res.data && res.data.prize) {
           setFormResponse(
             "Hurray! you won a free ticket to Blind Data on Wednesday"

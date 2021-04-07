@@ -1,17 +1,14 @@
-import React, { useState } from "react";
-import { MovieDetails, MovieList } from "../../containers";
+import React from "react";
+import { MovieList } from "../../containers";
+import { MovieDetailsWithAd } from "../../components";
 import styles from "./movies.module.scss";
 
 function Movies() {
-  const [selectedMovie, setSlectedMovie] = useState({} as Movie);
-  const onItemClick = (movie: Movie) => {
-    setSlectedMovie(movie);
-  };
-
+  // console.log("Movies page init");
   return (
     <div className={styles.movies}>
-      <MovieList onItemClick={onItemClick} />
-      <MovieDetails data={selectedMovie} />
+      <MovieList initialPage={1} />
+      <MovieDetailsWithAd />
     </div>
   );
 }

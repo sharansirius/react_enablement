@@ -1,9 +1,13 @@
 import React from "react";
 import styles from "./likesCount.module.scss";
 
-function LikesCount() {
+function LikesCount({ count }: LikesCountProps) {
   // console.log("LikesCount init");
-  return <div className={styles.likesCount}>Likes Count</div>;
+  return <p className={styles.likesCount}>{count} Likes</p>;
+}
+
+interface LikesCountProps {
+  count: number;
 }
 
 export default LikesCount;

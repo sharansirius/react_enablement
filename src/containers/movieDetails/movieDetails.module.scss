@@ -1,3 +1,11 @@
 .movieDetails {
-  width: 50%;
+  width: 30%;
+  padding: 2rem 0;
+}
+
+.likeSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

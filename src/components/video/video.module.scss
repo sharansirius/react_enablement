@@ -1,28 +1,33 @@
 .videoWrapper {
   overflow: hidden;
 
-  &.large {
-    width: 100%;
-    height: auto;
-  }
-
   &.medium {
-    width: 400px;
+    // width: 400px;
     height: 200px;
   }
 
   &.small {
-    width: 300px;
+    // width: 300px;
     height: 150px;
   }
 
   &.xsmall {
-    width: 100px;
+    // width: 100px;
     height: 100px;
   }
 
   .video {
     width: auto;
     height: 100%;
+  }
+
+  &.large {
+    width: 100%;
+    height: auto;
+
+    .video {
+      width: 100%;
+      height: auto;
+    }
   }
 }

@@ -5,7 +5,6 @@ import { JumboImage, Language, ErrorFallback } from "../../components";
 import { Lottery, TeasersList, Trailers } from "../../containers";
 
 function Home() {
-  // console.log("Home init");
   return (
     <>
       <JumboImage src="images/sindel-background.png" />

@@ -1,12 +1,20 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Image, Like, LikesCount } from "..";
+import { selectMovie } from "../../redux";
 import styles from "./movie.module.scss";
 
-function Movie({ data, onItemClick }: MovieProps) {
+function Movie({ data }: MovieProps) {
+  // console.log("Movie component init");
+  const dispatch = useDispatch();
+  const onItemClicked = (movie: Movie) => {
+    dispatch(selectMovie(movie));
+  };
+
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-    <div className={styles.movie} onClick={() => onItemClick(data)}>
+    <div className={styles.movie} onClick={() => onItemClicked(data)}>
       <Image
         src={data.posterurl}
         classSelector="medium"
@@ -16,10 +24,10 @@ function Movie({ data, onItemClick }: MovieProps) {
       <div className={styles.moviesDetails}>
         <div>
           {data.title}
-          <LikesCount />
+          <LikesCount count={data.likes} />
         </div>
         <div>
-          <Like />
+          <Like movie={data} />
         </div>
       </div>
     </div>
@@ -28,7 +36,6 @@ function Movie({ data, onItemClick }: MovieProps) {
 
 interface MovieProps {
   data: Movie;
-  onItemClick: (data: Movie) => void;
 }
 
 export default Movie;

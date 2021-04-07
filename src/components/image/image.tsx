@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./image.module.scss";
 
 function Image({ classSelector, src, alt, fallbackImage }: ImageProps) {
-  const [srcImg, setSrcImg] = useState(false);
-  const onError = () => {
+  const [srcImg, setSrcImg] = useState(true);
+
+  useEffect(() => {
     setSrcImg(true);
+  }, [src]);
+
+  const onError = () => {
+    setSrcImg(false);
   };
 
   return (
     <>
-      {srcImg ? (
+      {!srcImg ? (
         <img
           className={`${styles.image} ${styles[classSelector]} ${styles.noImage}`}
           src={fallbackImage}

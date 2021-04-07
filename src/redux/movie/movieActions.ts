@@ -5,6 +5,7 @@ import {
   LIKE_MOVIE,
   FETCH_MOVIES_FAILURE,
   FETCH_MOVIES_SUCCESS,
+  UPDATE_LIKE_COUNT,
 } from "./movieTypes";
 
 export const selectMovie = (data: Movie) => ({ type: SELECT_MOVIE, data });
@@ -23,7 +24,9 @@ const fetchMoviesFailure = (error: string) => {
     data: error,
   };
 };
+
 export const initMovie = (page: number) => {
+  // eslint-disable-next-line func-names
   return function (dispatch: Dispatch) {
     _services
       .getMovies(page)
@@ -35,5 +38,12 @@ export const initMovie = (page: number) => {
       .catch((error) => {
         dispatch(fetchMoviesFailure(error.message));
       });
+  };
+};
+
+export const updateLikes = (data: Movie) => {
+  return {
+    type: UPDATE_LIKE_COUNT,
+    data,
   };
 };

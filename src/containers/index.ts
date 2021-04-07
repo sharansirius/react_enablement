@@ -1,4 +1,3 @@
-export { default as video } from "./video/video";
 export { default as MovieList } from "./movieList/movieList";
 // eslint-disable-next-line import/no-cycle
 export { default as Main } from "./main/main";
