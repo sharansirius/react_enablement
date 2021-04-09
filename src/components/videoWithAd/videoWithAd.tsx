@@ -33,7 +33,6 @@ const VideowithAd = ({
 
   const handleTimerCall = useCallback(
     (duration: number | undefined) => {
-      // console.log("handleTimerCall", duration);
       onVideoStartOrStop(duration);
     },
     [onVideoStartOrStop]

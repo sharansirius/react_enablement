@@ -1,10 +1,17 @@
 import React from "react";
-import { MovieList } from "../../containers";
-import { MovieDetailsWithAd } from "../../components";
+import { MovieList, MovieDetails } from "../../containers";
+import { VIDEO } from "../../constants/appConstants";
+import withAdTimer from "../../hoc/withAdTimer/WithAdTimer";
+import { getAdConfigObject } from "../../utils/utils";
 import styles from "./movies.module.scss";
 
 function Movies() {
   // console.log("Movies page init");
+  const MovieDetailsWithAd = withAdTimer(
+    MovieDetails,
+    getAdConfigObject(VIDEO.MOVIE_DESCRIPTION, false, true)
+  );
+
   return (
     <div className={styles.movies}>
       <MovieList initialPage={1} />

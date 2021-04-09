@@ -3,21 +3,16 @@ import { v4 as uuidv4 } from "uuid";
 import { Heading, VideoWithAd } from "../../components";
 import withAdTimer from "../../hoc/withAdTimer/WithAdTimer";
 import * as _service from "../../services/MovieService";
+import { getAdConfigObject } from "../../utils/utils";
 import styles from "./teasersList.module.scss";
 import { VIDEO } from "../../constants/appConstants";
 
 function TeasersList() {
   const [teaserList, setTeaserList] = useState([]);
-  const TeaserWithAd = withAdTimer(VideoWithAd, {
-    adDuration: VIDEO.TEASER.AD_DURATION,
-    adBanners: VIDEO.TEASER.AD_BANNERS,
-    interval: VIDEO.TEASER.INTERVAL,
-    forVideo: true,
-    messages: {
-      adStart: VIDEO.TEASER.AD_OFF_IN,
-      adStop: VIDEO.TEASER.AD_ON_IN,
-    },
-  });
+  const TeaserWithAd = withAdTimer(
+    VideoWithAd,
+    getAdConfigObject(VIDEO.TEASER, true, true)
+  );
   useEffect(() => {
     _service
       .getShortTeasers()

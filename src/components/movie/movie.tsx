@@ -38,4 +38,4 @@ interface MovieProps {
   data: Movie;
 }
 
-export default Movie;
+export default React.memo(Movie);

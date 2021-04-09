@@ -12,6 +12,7 @@ function withAdTimer(
       adBanners,
       messages,
       forVideo,
+      hasAd,
     } = adTimerConfig;
     const [displayAd, setDisplayAd] = useState(false);
     const [hideTimer, setHideTimer] = useState(forVideo);
@@ -20,8 +21,8 @@ function withAdTimer(
       setDisplayAd((display) => !display);
     }, []);
 
-    const handleVideoStartOrStop = useCallback((duration: number) => {
-      // console.log("handleVideoStartOrStop", duration);
+    const handleVideoStartOrEnd = useCallback((duration: number) => {
+      // console.log("handleVideoStartOrEnd", duration);
       if (duration === 0) setHideTimer(false);
       if (duration === -1) {
         setHideTimer(true);
@@ -35,11 +36,11 @@ function withAdTimer(
         adBanner={
           adBanners && adBanners[Math.floor(Math.random() * adBanners.length)]
         }
-        onVideoStartOrStop={forVideo ? handleVideoStartOrStop : undefined}
+        onVideoStartOrStop={forVideo ? handleVideoStartOrEnd : undefined}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
       >
-        {!hideTimer && (
+        {!hideTimer && hasAd && (
           <AdTimer
             adTime={displayAd ? adDuration : interval}
             onAdEnd={handleTimeout}

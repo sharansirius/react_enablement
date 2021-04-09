@@ -2,7 +2,7 @@ import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import styles from "./home.module.scss";
 import { JumboImage, Language, ErrorFallback } from "../../components";
-import { Lottery, TeasersList, Trailers } from "../../containers";
+import { Lottery, TeasersList, TrailerList } from "../../containers";
 
 function Home() {
   return (
@@ -12,7 +12,7 @@ function Home() {
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <Lottery />
         </ErrorBoundary>
-        <Trailers />
+        <TrailerList />
         <TeasersList />
         <Language />
       </div>

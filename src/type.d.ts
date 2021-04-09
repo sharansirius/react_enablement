@@ -104,4 +104,5 @@ type AdTimerConfig = {
   adBanners: string[];
   messages: { adStart: string; adStop: string };
   forVideo: boolean;
+  hasAd: boolean;
 };

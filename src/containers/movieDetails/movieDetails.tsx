@@ -4,7 +4,12 @@ import { Heading, JumboImage, Like, LikesCount } from "../../components";
 import styles from "./movieDetails.module.scss";
 // import withAd from "../../components/withAd/withAd";
 
-function MovieDetails({ displayAd, adBanner, children }: MovieDetailsProps) {
+function MovieDetails({
+  displayAd,
+  adBanner,
+  children,
+  hasAd,
+}: MovieDetailsProps) {
   // function MovieDetails({ extraInfo }: MovieDetailsProps) {
   // console.log("MovieDetails component init");
   const selectedMovie = useSelector(
@@ -13,7 +18,7 @@ function MovieDetails({ displayAd, adBanner, children }: MovieDetailsProps) {
 
   return (
     <div className={styles.movieDetails}>
-      {displayAd ? (
+      {displayAd && hasAd ? (
         <JumboImage src={adBanner as string} />
       ) : (
         <>
@@ -48,11 +53,13 @@ interface MovieDetailsProps {
   displayAd?: boolean;
   adBanner?: string;
   children: ReactChild | ReactChildren;
+  hasAd?: boolean;
 }
 
 MovieDetails.defaultProps = {
   displayAd: false,
   adBanner: "",
+  hasAd: false,
 };
 
 export default MovieDetails;
