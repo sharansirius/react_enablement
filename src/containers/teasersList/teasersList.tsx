@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { Heading, VideoWithAd } from "../../components";
+import { Heading, Teaser } from "../../components";
 import withAdTimer from "../../hoc/withAdTimer/WithAdTimer";
 import * as _service from "../../services/MovieService";
 import { getAdConfigObject } from "../../utils/utils";
@@ -10,7 +10,7 @@ import { VIDEO } from "../../constants/appConstants";
 function TeasersList() {
   const [teaserList, setTeaserList] = useState([]);
   const TeaserWithAd = withAdTimer(
-    VideoWithAd,
+    Teaser,
     getAdConfigObject(VIDEO.TEASER, true, true)
   );
   useEffect(() => {

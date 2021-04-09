@@ -17,5 +17,5 @@ export { default as Like } from "./like/like";
 export { default as LikesCount } from "./likesCount/likesCount";
 export { default as PrivateRoute } from "./privateRoute/privateRoute";
 export { default as LoadMore } from "./loadMore/loadMore";
-export { default as VideoWithAd } from "./videoWithAd/videoWithAd";
 export { default as Trailer } from "./trailer/trailer";
+export { default as Teaser } from "./teaser/teaser";

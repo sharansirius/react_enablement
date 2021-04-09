@@ -4,13 +4,26 @@ import React, {
   RefAttributes,
   SyntheticEvent,
 } from "react";
+import { Image } from "..";
 import { VIDEO } from "../../constants/appConstants";
 import styles from "./video.module.scss";
 
 const Video: ForwardRefExoticComponent<
   VideoProps & RefAttributes<HTMLVideoElement>
 > = React.forwardRef(
-  ({ src, classSelector, type, poster, onPlay, onEnd }: VideoProps, ref) => {
+  (
+    {
+      src,
+      classSelector,
+      type,
+      poster,
+      onPlay,
+      onEnd,
+      displayAd,
+      adBanner,
+    }: VideoProps,
+    ref
+  ) => {
     const onVideoError = (elem: SyntheticEvent<HTMLVideoElement, Event>) => {
       // eslint-disable-next-line no-alert
       // console.log("Video Error", elem);
@@ -29,6 +42,16 @@ const Video: ForwardRefExoticComponent<
         >
           <source src={src} type={type} />
         </video>
+
+        {displayAd && (
+          <div className={styles[`ad_${classSelector}`]}>
+            <Image
+              classSelector={classSelector}
+              src={adBanner as string}
+              alt="AD Image"
+            />
+          </div>
+        )}
       </div>
     );
   }
@@ -41,6 +64,8 @@ interface VideoProps {
   poster?: string;
   onPlay?: () => void;
   onEnd?: () => void;
+  displayAd?: boolean;
+  adBanner?: string;
 }
 
 Video.defaultProps = {
@@ -48,6 +73,8 @@ Video.defaultProps = {
   poster: VIDEO.VIDEO_DEFAULTS.POSTER,
   onPlay: () => {},
   onEnd: () => {},
+  displayAd: false,
+  adBanner: VIDEO.VIDEO_DEFAULTS.POSTER,
 };
 
 export default Video;

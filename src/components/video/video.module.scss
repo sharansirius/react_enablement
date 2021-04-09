@@ -1,5 +1,7 @@
 .videoWrapper {
   overflow: hidden;
+  padding: 8px;
+  position: relative;
 
   &.medium {
     // width: 400px;
@@ -29,5 +31,12 @@
       width: 100%;
       height: auto;
     }
+  }
+
+  .ad_medium {
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    top: 0;
   }
 }

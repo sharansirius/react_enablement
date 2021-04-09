@@ -5,12 +5,11 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import { Video, Image } from "..";
+import { Heading, Video } from "..";
 import { VIDEO } from "../../constants/appConstants";
-import Heading from "../heading/heading";
-import styles from "./videoWithAd.module.scss";
+import styles from "./teaser.module.scss";
 
-const VideowithAd = ({
+function Teaser({
   src,
   type,
   poster,
@@ -20,7 +19,7 @@ const VideowithAd = ({
   name,
   children,
   onVideoStartOrStop,
-}: VideowithAdProps) => {
+}: TeasersProps) {
   const [videoRef, setVideoRef] = useState<HTMLVideoElement>(
     {} as HTMLVideoElement
   );
@@ -39,7 +38,7 @@ const VideowithAd = ({
   );
 
   return (
-    <div className={styles.videowithAd}>
+    <div className={styles.teaser}>
       <Video
         ref={useCallback(
           // eslint-disable-next-line @typescript-eslint/no-shadow
@@ -52,19 +51,16 @@ const VideowithAd = ({
         classSelector={classSelector}
         onPlay={() => handleTimerCall(videoRef.currentTime)}
         onEnd={() => handleTimerCall(-1)}
+        displayAd={displayAd}
+        adBanner={adBanner}
       />
-      {displayAd && (
-        <div className={styles[`ad_${classSelector}`]}>
-          <Image classSelector={classSelector} src={adBanner} alt="AD Image" />
-        </div>
-      )}
       <Heading label={name} classSelector={classSelector} />
       {children}
     </div>
   );
-};
+}
 
-interface VideowithAdProps {
+interface TeasersProps {
   poster?: string;
   src: string;
   type?: string;
@@ -76,9 +72,9 @@ interface VideowithAdProps {
   onVideoStartOrStop: (duration: number | undefined) => void;
 }
 
-VideowithAd.defaultProps = {
+Teaser.defaultProps = {
   type: VIDEO.VIDEO_DEFAULTS.TYPE,
   poster: VIDEO.VIDEO_DEFAULTS.POSTER,
 };
 
-export default React.memo(VideowithAd);
+export default Teaser;
