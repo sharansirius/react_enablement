@@ -21,6 +21,7 @@ const Video: ForwardRefExoticComponent<
       onEnd,
       displayAd,
       adBanner,
+      hasAd,
     }: VideoProps,
     ref
   ) => {
@@ -43,7 +44,7 @@ const Video: ForwardRefExoticComponent<
           <source src={src} type={type} />
         </video>
 
-        {displayAd && (
+        {displayAd && hasAd && (
           <div className={styles[`ad_${classSelector}`]}>
             <Image
               classSelector={classSelector}
@@ -66,6 +67,7 @@ interface VideoProps {
   onEnd?: () => void;
   displayAd?: boolean;
   adBanner?: string;
+  hasAd?: boolean;
 }
 
 Video.defaultProps = {
@@ -75,6 +77,7 @@ Video.defaultProps = {
   onEnd: () => {},
   displayAd: false,
   adBanner: VIDEO.VIDEO_DEFAULTS.POSTER,
+  hasAd: false,
 };
 
 export default Video;

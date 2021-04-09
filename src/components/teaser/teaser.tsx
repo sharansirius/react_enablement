@@ -19,6 +19,7 @@ function Teaser({
   name,
   children,
   onVideoStartOrStop,
+  hasAd,
 }: TeasersProps) {
   const [videoRef, setVideoRef] = useState<HTMLVideoElement>(
     {} as HTMLVideoElement
@@ -53,6 +54,7 @@ function Teaser({
         onEnd={() => handleTimerCall(-1)}
         displayAd={displayAd}
         adBanner={adBanner}
+        hasAd={hasAd}
       />
       <Heading label={name} classSelector={classSelector} />
       {children}
@@ -70,6 +72,7 @@ interface TeasersProps {
   adBanner: string;
   children: ReactChild | ReactChildren;
   onVideoStartOrStop: (duration: number | undefined) => void;
+  hasAd: boolean;
 }
 
 Teaser.defaultProps = {

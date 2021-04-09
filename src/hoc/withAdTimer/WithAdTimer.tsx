@@ -37,6 +37,7 @@ function withAdTimer(
           adBanners && adBanners[Math.floor(Math.random() * adBanners.length)]
         }
         onVideoStartOrStop={forVideo ? handleVideoStartOrEnd : undefined}
+        hasAd={hasAd}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
       >
