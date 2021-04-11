@@ -1,6 +1,12 @@
 import React, { ReactChild, ReactChildren } from "react";
 import { useSelector } from "react-redux";
-import { Heading, JumboImage, Like, LikesCount } from "../../components";
+import {
+  Heading,
+  JumboImage,
+  Like,
+  LikesCount,
+  Skeleton,
+} from "../../components";
 import styles from "./movieDetails.module.scss";
 // import withAd from "../../components/withAd/withAd";
 
@@ -18,6 +24,7 @@ function MovieDetails({
 
   return (
     <div className={styles.movieDetails}>
+      {!selectedMovie ? <Skeleton /> : ""}
       {displayAd && hasAd ? (
         <JumboImage src={adBanner as string} />
       ) : (

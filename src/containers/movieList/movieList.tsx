@@ -14,18 +14,15 @@ function MovieList({ initialPage }: MovieListProps) {
   const loadMore = (page: number) => {
     dispatch(initMovie(page));
   };
-
   useEffect(() => {
     if (movies && movies.length === 0) {
       dispatch(initMovie(initialPage));
-      // dispatch(selectMovie(movies[0]));
     }
   }, []);
 
   useEffect(() => {
     dispatch(selectMovie(movies[0]));
   }, [movies]);
-
   return (
     <div className={styles.moviesWrapper}>
       <Heading label="All Movies" classSelector="medium" />
