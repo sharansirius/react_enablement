@@ -23,23 +23,24 @@ function Movie({ data }: MovieProps) {
   }
   return (
     <div className={styles.movie} onClick={() => onItemClicked(data)}>
-      {showSkeleton ? <Skeleton /> : ""}
-      <Image
-        src={data.posterurl}
-        classSelector="medium"
-        alt={data.title}
-        fallbackImage="./images/no-image.png"
-        ref={(ref: HTMLImageElement) => setImageRef(ref)}
-      />
-      <div className={styles.moviesDetails}>
-        <div>
-          {data.title}
-          <LikesCount count={data.likes} />
+      <Skeleton show={showSkeleton}>
+        <Image
+          src={data.posterurl}
+          classSelector="medium"
+          alt={data.title}
+          fallbackImage="./images/no-image.png"
+          ref={(ref: HTMLImageElement) => setImageRef(ref)}
+        />
+        <div className={styles.moviesDetails}>
+          <div>
+            {data.title}
+            <LikesCount count={data.likes} />
+          </div>
+          <div>
+            <Like movie={data} />
+          </div>
         </div>
-        <div>
-          <Like movie={data} />
-        </div>
-      </div>
+      </Skeleton>
     </div>
   );
 }

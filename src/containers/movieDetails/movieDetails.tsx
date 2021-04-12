@@ -24,33 +24,35 @@ function MovieDetails({
 
   return (
     <div className={styles.movieDetails}>
-      {!selectedMovie ? <Skeleton /> : ""}
-      {displayAd && hasAd ? (
-        <JumboImage src={adBanner as string} />
-      ) : (
-        <>
-          {selectedMovie && selectedMovie.title ? (
-            <>
-              <div className={styles.likeSection}>
-                <LikesCount count={selectedMovie.likes} />
-                <Like movie={selectedMovie} />
-              </div>
-              <JumboImage src={selectedMovie.posterurl} />
-              <Heading classSelector="large" label={selectedMovie.title} />
+      <Skeleton show={!(selectedMovie && selectedMovie.title)} />
+      <>
+        {displayAd && hasAd ? (
+          <JumboImage src={adBanner as string} />
+        ) : (
+          <>
+            {selectedMovie && selectedMovie.title ? (
+              <>
+                <div className={styles.likeSection}>
+                  <LikesCount count={selectedMovie.likes} />
+                  <Like movie={selectedMovie} />
+                </div>
+                <JumboImage src={selectedMovie.posterurl} />
+                <Heading classSelector="large" label={selectedMovie.title} />
 
-              <p>{selectedMovie.storyline}</p>
-              <p>{`Release Date : ${selectedMovie.releaseDate}`}</p>
-              {selectedMovie.contentRating ? (
-                <p>{`Content Rating : ${selectedMovie.contentRating}`} </p>
-              ) : (
-                ""
-              )}
-            </>
-          ) : (
-            ""
-          )}
-        </>
-      )}
+                <p>{selectedMovie.storyline}</p>
+                <p>{`Release Date : ${selectedMovie.releaseDate}`}</p>
+                {selectedMovie.contentRating ? (
+                  <p>{`Content Rating : ${selectedMovie.contentRating}`} </p>
+                ) : (
+                  ""
+                )}
+              </>
+            ) : (
+              ""
+            )}
+          </>
+        )}
+      </>
       {children}
     </div>
   );
