@@ -31,7 +31,7 @@ function AdTimer({ adTime, message, onAdEnd }: AdTimerProps) {
   }, [adTime]);
 
   return (
-    <div className={styles.adTimer}>
+    <div className={styles.adTimer} data-testid="adTimer">
       {message || ""} {timeLapse}
     </div>
   );

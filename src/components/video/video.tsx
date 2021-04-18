@@ -40,6 +40,7 @@ const Video: ForwardRefExoticComponent<
           ref={ref}
           onPlay={onPlay}
           onEnded={onEnd}
+          data-testid="video"
         >
           <source src={src} type={type} />
         </video>

@@ -1,6 +1,5 @@
 import React, { MouseEvent } from "react";
 import { Heading, Image, Button } from "..";
-import { TRAILER_DESCRIPTION } from "../../constants/appConstants";
 import styles from "./trailer.module.scss";
 
 function Trailer({ onClick }: TrailersProps) {
@@ -12,8 +11,8 @@ function Trailer({ onClick }: TrailersProps) {
         alt="Movie"
       />
       <div className={styles.details}>
-        <Heading classSelector="small" label="Sintel" />
-        <p>{TRAILER_DESCRIPTION}</p>
+        <Heading classSelector="small" intlKey="app.trailerName" />
+        <Heading classSelector="xsmall" intlKey="app.trailerDesc" />
         <Button classSelector="primary" label="Watch Now" onClick={onClick} />
       </div>
     </div>

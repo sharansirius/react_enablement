@@ -17,7 +17,7 @@ function TrailerList() {
 
   return (
     <div className={styles.trailers}>
-      <Heading classSelector="medium" label="Trailers" />
+      <Heading classSelector="medium" intlKey="app.trailers" />
       {userAuth?.isLoggedIn ? (
         ""
       ) : (
@@ -30,9 +30,5 @@ function TrailerList() {
     </div>
   );
 }
-
-// interface TrailersProps {
-//   Trailers: string;
-// }
 
 export default React.memo(TrailerList);

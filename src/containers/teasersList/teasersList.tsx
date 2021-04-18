@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Heading, Teaser } from "../../components";
-import withAdTimer from "../../hoc/withAdTimer/WithAdTimer";
+import withAdTimer from "../../hoc/withAdTimer/withAdTimer";
 import * as _service from "../../services/MovieService";
 import { getAdConfigObject } from "../../utils/utils";
 import styles from "./teasersList.module.scss";

@@ -30,6 +30,7 @@ const Image: ForwardRefExoticComponent<
             alt={alt}
             ref={ref}
             onLoad={onLoad}
+            data-testid="adBanner"
           />
         ) : (
           <img
@@ -39,6 +40,7 @@ const Image: ForwardRefExoticComponent<
             onError={onError}
             ref={ref}
             onLoad={onLoad}
+            data-testid="adBanner"
           />
         )}
       </>

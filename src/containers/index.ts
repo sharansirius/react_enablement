@@ -5,3 +5,5 @@ export { default as Lottery } from "./lottery/lottery";
 export { default as TrailerList } from "./trailerList/trailerList";
 export { default as TeasersList } from "./teasersList/teasersList";
 export { default as MovieDetails } from "./movieDetails/movieDetails";
+export { default as LanguageList } from "./languageList/languageList";
+export { default as LanguageSwitch } from "./languageSwitch/languageSwitch";

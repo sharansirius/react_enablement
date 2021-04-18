@@ -1,7 +1,7 @@
 import React from "react";
 import { MovieList, MovieDetails } from "../../containers";
 import { VIDEO } from "../../constants/appConstants";
-import withAdTimer from "../../hoc/withAdTimer/WithAdTimer";
+import withAdTimer from "../../hoc/withAdTimer/withAdTimer";
 import { getAdConfigObject } from "../../utils/utils";
 import styles from "./movies.module.scss";
 
